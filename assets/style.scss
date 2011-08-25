@@ -39,9 +39,6 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		h1 {
 			font-size: $font_size * 4;
 			line-height: $line_height * 4;
-			> span {
-				white-space: nowrap;
-			}
 		}
 		#aka {
 			font-size: $font_size * 2;
