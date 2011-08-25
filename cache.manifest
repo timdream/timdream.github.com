@@ -1,8 +1,9 @@
 CACHE MANIFEST
-# rev 1
+# rev 2
 /
 /assets/gmail.png
+/assets/cobalt-canvas-texture.jpg
 /assets/libs/jquery-1.6.2.min.js
-/assets/script.js
+/assets/script.min.js
 /assets/style.css
 /favicon.ico
