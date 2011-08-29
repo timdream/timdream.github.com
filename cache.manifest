@@ -2,7 +2,11 @@ CACHE MANIFEST
 # rev 5
 /
 /assets/gmail.png
-/assets/libs/jquery-1.6.2.min.js
 /assets/script.min.js
 /assets/style.css
 /favicon.ico
+
+//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
+http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
+http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff
+http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
