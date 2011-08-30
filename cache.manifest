@@ -1,5 +1,7 @@
 CACHE MANIFEST
 # rev 5
+
+CACHE:
 /
 /assets/gmail.png
 /assets/script.min.js
@@ -10,3 +12,6 @@ CACHE MANIFEST
 http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
+
+NETWORK:
+*
