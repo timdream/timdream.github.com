@@ -52,7 +52,7 @@
         white-space: nowrap; }
       section#greeting #make {
         font-size: 3em;
-        line-height: 48px;
+        line-height: 1.33em;
         font-family: "Gloria Hallelujah", cursive;
         text-align: center;
         padding: 1em 0;
