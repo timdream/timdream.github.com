@@ -53,7 +53,7 @@
       section#greeting #make {
         font-size: 3em;
         line-height: 48px;
-        font-family: "Gloria Hallelujah";
+        font-family: "Gloria Hallelujah", cursive;
         text-align: center;
         padding: 1em 0;
         color: #000;
