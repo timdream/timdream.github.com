@@ -1,6 +1,8 @@
 CACHE MANIFEST
-# hash 4ba7c95e9ec3bf4f2aed26f379cf03c4
+# Renew this hash every time to invalidate current cache
+# hash 8ba7db7e5b5d63d6b6718e119579be8b
 
+# Files to ask browsers to cache even when user hits reload
 CACHE:
 /
 /assets/gmail.png
@@ -8,6 +10,7 @@ CACHE:
 /assets/style.css
 /favicon.ico
 
+# Yes, it also works for remote files, but we will be unable to track their changes
 //ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
 http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff
@@ -15,6 +18,9 @@ http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDW
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28Y7PgI6IeGWgqdOlp0TQlJM.ttf
 
+# "*" Below guarantees non-cached files can be access when network is available
 NETWORK:
 *
 
+# HTTP header also matters. Self-taught material available at
+# http://diveintohtml5.org/offline.html
