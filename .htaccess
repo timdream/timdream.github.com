@@ -1,8 +1,8 @@
 # config for apache (not github.com)
 
-AddType text/cache-manifest .manifest
+AddType text/cache-manifest .appcache
 
-<Files cache.manifest>
+<Files site.appcache>
 	ExpiresActive On
 	ExpiresDefault "access"
 </Files>
