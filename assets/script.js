@@ -16,7 +16,15 @@ jQuery(function ($) {
 			window.open(this.href, '', 'width=480,height=360');
 		}
 	);
-	
+
+	$('.make').one(
+		'dblclick',
+		function (ev) {
+			ev.preventDefault();
+			$(this).attr('contenteditable', true).focus();
+		}
+	);
+
 	if ('onhashchange' in window) {
 		window.onhashchange = handleHash;
 	} else {
