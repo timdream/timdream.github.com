@@ -36,4 +36,12 @@ jQuery(function ($) {
 		);
 	}
 	handleHash();
+
+	window.applicationCache.addEventListener(
+		'updateready',
+		function () {
+			// window.applicationCache.swapCache(); // hard
+			window.location.reload(); // easier
+		}
+	);
 });
