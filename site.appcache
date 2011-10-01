@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # Renew this hash every time to invalidate current cache
-# hash 7e1490c94dd6ba08392923b9fc9d560d
+# hash 719b794eb6d7a718f9ba34ecc4772fea
 
 # Files to ask browsers to cache even when user hits reload
 CACHE:
@@ -8,7 +8,15 @@ CACHE:
 /assets/gmail.png
 /assets/script.min.js
 /assets/style.css
+/assets/tiramisu-icon-64-shadow.png
 /favicon.ico
+/works/coscup-icon.png
+/works/coscup.png
+/works/demolab.png
+/works/filmaker.png
+/works/gfx.png
+/works/memoryworks.png
+/works/wordcloud.png
 
 # Yes, it also works for remote files, but we will be unable to track their changes
 //ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
@@ -17,8 +25,9 @@ http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDW
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nn06qf9KHRHwsVx7iw5MXmY.ttf
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28Y7PgI6IeGWgqdOlp0TQlJM.ttf
+https://secure.gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200
 
-# "*" Below guarantees non-cached files can be access when network is available
+# "*" Below guarantees non-cached files can be accessed when network is available
 NETWORK:
 *
 
