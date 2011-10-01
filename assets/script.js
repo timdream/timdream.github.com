@@ -1,8 +1,11 @@
 jQuery(function ($) {
 
-	function handleHash (hash) {
+	function handleHash () {
+		var hash = window.location.hash || '#about';
+
+		// prevent scrolling by hide the element first and use replace()
 		$('body > section').hide();
-		window.location.hash = hash;
+		window.location.replace(hash); 
 		$(hash).show();
 	}
 
@@ -13,16 +16,24 @@ jQuery(function ($) {
 			window.open(this.href, '', 'width=480,height=360');
 		}
 	);
-	$('nav a').bind(
-		'click',
-		function (ev) {
-			handleHash($(this).attr('href')); // not using this.hash
-			ev.preventDefault();
-		}
-	);
-	if (window.location.hash) {
-		handleHash(window.location.hash);
+	
+	if ('onhashchange' in window) {
+		window.onhashchange = handleHash;
 	} else {
-		handleHash('#about');
+		// no crappy iframe of IE6/7, just make sure $('a') links works
+		$('a').live(
+			'click',
+			function () {
+				if (ev.which == 2 || ev.metaKey) return true;
+
+				var $this = $(this);
+
+				if ($this.attr('href').substr(0,1) === '#') {
+					window.location.replace($this.attr('href'));
+					handleHash();
+				}
+			}
+		);
 	}
+	handleHash();
 });
