@@ -17,6 +17,7 @@ CACHE:
 /works/gfx.png
 /works/memoryworks.png
 /works/wordcloud.png
+/works/wretchleech.png
 
 # Yes, it also works for remote files, but we will be unable to track their changes
 //ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
