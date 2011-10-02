@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # Renew this hash every time to invalidate current cache
-# hash f2b53e788423638e9a1c2c2352b6cb10
+# hash 83209e64345a1c145e8013b976666ae5
 
 # Files to ask browsers to cache even when user hits reload
 CACHE:
@@ -27,7 +27,7 @@ http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDW
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nn06qf9KHRHwsVx7iw5MXmY.ttf
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28Y7PgI6IeGWgqdOlp0TQlJM.ttf
-https://secure.gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200
+http://gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200
 
 # "*" Below guarantees non-cached files can be accessed when network is available
 NETWORK:
