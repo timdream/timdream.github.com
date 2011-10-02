@@ -183,9 +183,9 @@
     margin-right: 32px;
     position: relative;
     -webkit-transition: -webkit-transform 0.5s; }
-    #share.show:hover {
+    #share.show {
       -webkit-transform: translateX(-108px); }
-      #share.show:hover > * {
+      #share.show > * {
         opacity: 1; }
     #share > * {
       position: absolute;

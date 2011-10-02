@@ -255,7 +255,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 
 		-webkit-transition: -webkit-transform 0.5s;
 
-		&.show:hover {
+		//&.show:hover {
+		&.show {
 			-webkit-transform: translateX(-32px - 60px - $line_height);
 			> * {
 				opacity: 1;
