@@ -1,5 +1,7 @@
 jQuery(function ($) {
 
+	var reloadOnNextHashChange = false;
+
 	function handleHash () {
 		var hash = window.location.hash || '#about';
 
@@ -7,6 +9,7 @@ jQuery(function ($) {
 		$('body > section').hide();
 		window.location.replace(hash); 
 		$(hash).show();
+		if (reloadOnNextHashChange) window.location.reload();
 	}
 
 	$('.contact a').bind(
@@ -52,7 +55,8 @@ jQuery(function ($) {
 			'updateready',
 			function () {
 				// window.applicationCache.swapCache(); // hard
-				window.location.reload(); // easier
+				//window.location.reload(); // easier
+				reloadOnNextHashChange = true;
 			}
 		);
 
