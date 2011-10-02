@@ -275,7 +275,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		line-height: $line_height * 2;
 		font-size: $font_size * 2;
 		height: 64px; width: 50%; float: right;
-		margin-right: 32px;
+		margin-right: 64px + 60px + $line_height;
 		position: relative;
 
 		-webkit-transition: -webkit-transform 0.5s;
@@ -284,13 +284,19 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		-o-transition: -o-transform 0.5s;
 		transition: transform 0.5s;
 
+		-webkit-transform: translateX(32px + 60px + $line_height);
+		-moz-transform: translateX(32px + 60px + $line_height);
+		-ms-transform: translateX(32px + 60px + $line_height);
+		-o-transform: translateX(32px + 60px + $line_height);
+		transform: translateX(32px + 60px + $line_height);
+
 		//&.show:hover {
 		&.show {
-			-webkit-transform: translateX(-32px - 60px - $line_height);
-			-moz-transform: translateX(-32px - 60px - $line_height);
-			-ms-transform: translateX(-32px - 60px - $line_height);
-			-o-transform: translateX(-32px - 60px - $line_height);
-			transform: translateX(-32px - 60px - $line_height);
+			-webkit-transform: none;
+			-moz-transform: none;
+			-ms-transform: none;
+			-o-transform: none;
+			transform: none;
 			> * {
 				opacity: 1;
 			}
