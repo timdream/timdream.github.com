@@ -45,11 +45,24 @@ jQuery(function ($) {
 	}
 	handleHash();
 
-	window.applicationCache.addEventListener(
-		'updateready',
-		function () {
-			// window.applicationCache.swapCache(); // hard
-			window.location.reload(); // easier
-		}
-	);
+	$.getScript('https://apis.google.com/js/plusone.js');
+
+	if (window.applicationCache) {
+		window.applicationCache.addEventListener(
+			'updateready',
+			function () {
+				// window.applicationCache.swapCache(); // hard
+				window.location.reload(); // easier
+			}
+		);
+
+		window.applicationCache.addEventListener(
+			'error', // can't get manifest file - currently offline
+			function () {
+				$('#share').removeClass('show');
+			}
+		);
+
+	}
+
 });

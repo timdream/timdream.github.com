@@ -174,10 +174,29 @@
           content: none; }
 
   #share {
-    background: transparent url("./tiramisu-icon-64-shadow.png") center center no-repeat;
+    background: transparent url("./tiramisu-icon-64-shadow.png") left center no-repeat;
     line-height: 32px;
     font-size: 24px;
-    height: 64px; }
+    height: 64px;
+    width: 50%;
+    float: right;
+    margin-right: 32px;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.5s; }
+    #share.show:hover {
+      -webkit-transform: translateX(-108px); }
+      #share.show:hover > * {
+        opacity: 1; }
+    #share > * {
+      position: absolute;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s; }
+    #share > #fblike {
+      left: 80px; }
+    #share > #gplusone {
+      left: 144px; }
+    #share > p {
+      left: 208px; }
 
   body > section {
     margin: 16px auto;

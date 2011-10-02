@@ -246,10 +246,35 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		}
 	}
 	#share {
-		background: transparent url('./tiramisu-icon-64-shadow.png') center center no-repeat;
+		background: transparent url('./tiramisu-icon-64-shadow.png') left center no-repeat;
 		line-height: $line_height * 2;
 		font-size: $font_size * 2;
-		height: 64px;
+		height: 64px; width: 50%; float: right;
+		margin-right: 32px;
+		position: relative;
+
+		-webkit-transition: -webkit-transform 0.5s;
+
+		&.show:hover {
+			-webkit-transform: translateX(-32px - 60px - $line_height);
+			> * {
+				opacity: 1;
+			}
+		}
+		> * {
+			position: absolute;
+			opacity: 0;
+			-webkit-transition: opacity 0.5s;
+		}
+		> #fblike {
+			left: 64px + $line_height;
+		}
+		> #gplusone {
+			left: 64px * 2 + $line_height;
+		}
+		> p {
+			left: 64px * 3 + $line_height;
+		}
 	}
 	body > section {
 		margin: $line_height auto;
