@@ -49,6 +49,16 @@
   to {
     -ms-transform: translateY(0); } }
 
+@keyframes dropDown {
+  from {
+    transform: translateY(-200px); }
+
+  90% {
+    transform: translateY(64px); }
+
+  to {
+    transform: translateY(0); } }
+
 @-webkit-keyframes dropShow {
   from {
     opacity: 0; }
@@ -70,6 +80,16 @@
     opacity: 1; } }
 
 @-ms-keyframes dropShow {
+  from {
+    opacity: 0; }
+
+  90% {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@keyframes dropShow {
   from {
     opacity: 0; }
 
@@ -134,6 +154,8 @@
     -moz-animation-duration: 0.7s;
     -ms-animation-name: dropDown;
     -ms-animation-duration: 0.7s;
+    animation-name: dropDown;
+    animation-duration: 0.7s;
     margin: 0 0 16px 0; }
     body > header h1 {
       margin: 0 auto;
@@ -182,15 +204,27 @@
     float: right;
     margin-right: 32px;
     position: relative;
-    -webkit-transition: -webkit-transform 0.5s; }
+    -webkit-transition: -webkit-transform 0.5s;
+    -moz-transition: -moz-transform 0.5s;
+    -ms-transition: -ms-transform 0.5s;
+    -o-transition: -o-transform 0.5s;
+    transition: transform 0.5s; }
     #share.show {
-      -webkit-transform: translateX(-108px); }
+      -webkit-transform: translateX(-108px);
+      -moz-transform: translateX(-108px);
+      -ms-transform: translateX(-108px);
+      -o-transform: translateX(-108px);
+      transform: translateX(-108px); }
       #share.show > * {
         opacity: 1; }
     #share > * {
       position: absolute;
       opacity: 0;
-      -webkit-transition: opacity 0.5s; }
+      -webkit-transition: opacity 0.5s;
+      -moz-transition: opacity 0.5s;
+      -ms-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      transition: opacity 0.5s; }
     #share > #fblike {
       left: 80px; }
     #share > #gplusone {
@@ -208,6 +242,8 @@
     -moz-animation-duration: 0.7s;
     -ms-animation-name: fadeIn;
     -ms-animation-duration: 0.7s;
+    animation-name: fadeIn;
+    animation-duration: 0.7s;
     display: none; }
     body > section:after, body > section:before {
       content: '§';

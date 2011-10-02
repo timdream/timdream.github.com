@@ -84,6 +84,17 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 	}
 }
 
+@keyframes dropDown {
+	from {
+		transform: translateY(-200px);
+	}
+	90% {
+		transform: translateY($line_height * 4);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
 
 @-webkit-keyframes dropShow {
 	from {
@@ -110,6 +121,18 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 }
 
 @-ms-keyframes dropShow {
+	from {
+		opacity: 0;
+	}
+	90% {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes dropShow {
 	from {
 		opacity: 0;
 	}
@@ -191,6 +214,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		-moz-animation-duration: 0.7s;
 		-ms-animation-name: dropDown;
 		-ms-animation-duration: 0.7s;
+		animation-name: dropDown;
+		animation-duration: 0.7s;
 
 		margin: 0 0 $line_height 0;
 
@@ -254,10 +279,18 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		position: relative;
 
 		-webkit-transition: -webkit-transform 0.5s;
+		-moz-transition: -moz-transform 0.5s;
+		-ms-transition: -ms-transform 0.5s;
+		-o-transition: -o-transform 0.5s;
+		transition: transform 0.5s;
 
 		//&.show:hover {
 		&.show {
 			-webkit-transform: translateX(-32px - 60px - $line_height);
+			-moz-transform: translateX(-32px - 60px - $line_height);
+			-ms-transform: translateX(-32px - 60px - $line_height);
+			-o-transform: translateX(-32px - 60px - $line_height);
+			transform: translateX(-32px - 60px - $line_height);
 			> * {
 				opacity: 1;
 			}
@@ -266,6 +299,10 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 			position: absolute;
 			opacity: 0;
 			-webkit-transition: opacity 0.5s;
+			-moz-transition: opacity 0.5s;
+			-ms-transition: opacity 0.5s;
+			-o-transition: opacity 0.5s;
+			transition: opacity 0.5s;
 		}
 		> #fblike {
 			left: 64px + $line_height;
@@ -287,6 +324,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		-moz-animation-duration: 0.7s;
 		-ms-animation-name: fadeIn;
 		-ms-animation-duration: 0.7s;
+		animation-name: fadeIn;
+		animation-duration: 0.7s;
 
 		@include section_sign;
 
