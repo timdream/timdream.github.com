@@ -214,17 +214,17 @@
     -ms-transform: translateX(108px);
     -o-transform: translateX(108px);
     transform: translateX(108px); }
-    #share.show {
+    #share.show:hover {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
-      #share.show > * {
+      #share.show:hover > * {
         opacity: 1; }
     #share > * {
       position: absolute;
-      opacity: 0;
+      opacity: 0.3;
       -webkit-transition: opacity 0.5s;
       -moz-transition: opacity 0.5s;
       -ms-transition: opacity 0.5s;
