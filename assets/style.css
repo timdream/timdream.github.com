@@ -214,14 +214,16 @@
     -ms-transform: translateX(108px);
     -o-transform: translateX(108px);
     transform: translateX(108px); }
-    #share.show:hover {
+    #share:hover, html.touch #share {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
-      #share.show:hover > * {
+      #share:hover > *, html.touch #share > * {
         opacity: 1; }
+    html.applicationcache-offline #share > * {
+      opacity: 0; }
     #share > * {
       position: absolute;
       opacity: 0.3;

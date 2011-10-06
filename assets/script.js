@@ -63,7 +63,7 @@ jQuery(function ($) {
 		window.applicationCache.addEventListener(
 			'error', // can't get manifest file - currently offline
 			function () {
-				$('#share').removeClass('show');
+				$('html').addClass('applicationcache-offline');
 			}
 		);
 
