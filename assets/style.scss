@@ -290,7 +290,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		-o-transform: translateX(32px + 60px + $line_height);
 		transform: translateX(32px + 60px + $line_height);
 
-		&:hover, html.touch & {
+		html:not(.applicationcache-offline) &:hover, html:not(.applicationcache-offline).touch & {
 		//&.show {
 			-webkit-transform: none;
 			-moz-transform: none;

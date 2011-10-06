@@ -214,13 +214,13 @@
     -ms-transform: translateX(108px);
     -o-transform: translateX(108px);
     transform: translateX(108px); }
-    #share:hover, html.touch #share {
+    html:not(.applicationcache-offline) #share:hover, html:not(.applicationcache-offline).touch #share {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
-      #share:hover > *, html.touch #share > * {
+      html:not(.applicationcache-offline) #share:hover > *, html:not(.applicationcache-offline).touch #share > * {
         opacity: 1; }
     html.applicationcache-offline #share > * {
       opacity: 0; }
