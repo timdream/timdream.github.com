@@ -248,8 +248,7 @@
     -ms-animation-name: fadeIn;
     -ms-animation-duration: 0.7s;
     animation-name: fadeIn;
-    animation-duration: 0.7s;
-    display: none; }
+    animation-duration: 0.7s; }
     body > section:after, body > section:before {
       content: '§';
       text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
@@ -259,21 +258,26 @@
       font-size: 24px;
       color: #c0c0ce;
       text-align: center; }
-    body > section > header {
+    html.no-js body > section:before {
+      display: none; }
+    body > section html.js {
+      display: none; }
+    html.no-js body > section > header {
       font-size: 36px;
       line-height: 48px;
       font-weight: bold;
-      text-align: center;
+      text-align: center; }
+    html.js body > section > header {
       display: none; }
-      body > section > header:after {
-        content: '§';
-        text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
-        display: block;
-        line-height: 32px;
-        margin: 16px 0;
-        font-size: 24px;
-        color: #c0c0ce;
-        text-align: center; }
+    body > section > header:after {
+      content: '§';
+      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
+      display: block;
+      line-height: 32px;
+      margin: 16px 0;
+      font-size: 24px;
+      color: #c0c0ce;
+      text-align: center; }
     body > section .preface {
       font-size: 24px;
       line-height: 32px;

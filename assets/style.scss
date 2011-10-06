@@ -334,8 +334,15 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		animation-duration: 0.7s;
 
 		@include section_sign;
-
-		display: none;
+		
+		html.no-js & {
+			&:before {
+				display: none;
+			}
+		}
+		html.js {
+			display: none;
+		}
 
 		// no :target, use script for legacy browser support
 		&:target, &.target {
@@ -343,13 +350,15 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		}
 
 		> header {
-			// noscript 
-			font-size: $font_size * 3;
-			line-height: $line_height * 3;
-			font-weight: bold;
-			text-align: center;
-
-			display: none;
+			html.no-js & {
+				font-size: $font_size * 3;
+				line-height: $line_height * 3;
+				font-weight: bold;
+				text-align: center;
+			}
+			html.js & {
+				display: none;
+			}
 			&:after {
 				content: '§';
 				@include dim;
