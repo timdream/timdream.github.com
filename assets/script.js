@@ -3,12 +3,12 @@ jQuery(function ($) {
 	var reloadOnNextHashChange = false;
 
 	function handleHash () {
-		var hash = window.location.hash || '#about';
+		var hash = window.location.hash;
 
 		// prevent scrolling by hide the element first and use replace()
 		$('body > section').hide();
-		window.location.replace(hash); 
-		$(hash).show();
+		if (hash) window.location.replace(hash); 
+		$(hash || '#about').show();
 		if (reloadOnNextHashChange) window.location.reload();
 	}
 
