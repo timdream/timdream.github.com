@@ -149,7 +149,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		margin: 0; padding: 0;
 	}
 	body {
-		font: $font_size serif;
+		font-size: $font_size;
+		// remove font-family: serif; cause problem in IE9
 		line-height: $line_height;
 		margin: 0; padding: 0;
 		background: #e0e0e0 url($bg);
