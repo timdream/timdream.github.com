@@ -160,7 +160,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		margin: $line_height 0;
 	}
 	a {
-		text-shadow: 0 0 1.5px #00f;
+		text-shadow: 0 1px 0 rgba(#fff, 0.8), 0 0 1.5px #00f;
 		-webkit-transition: color 0.3s;
 		-moz-transition: color 0.3s;
 		-o-transition: color 0.3s;
@@ -173,7 +173,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 
 		&:hover {
 			color: #00c;
-			text-shadow: 0 0 1.5px #009;
+			text-shadow: 0 1px 0 rgba(#fff, 0.8), 0 0 1.5px #009;
 			img {
 				-webkit-box-shadow: 0 0 1.5px #009;
 				box-shadow: 0 0 1.5px #009;
@@ -181,7 +181,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		}
 		&:active {
 			color: #33f;
-			text-shadow: 0 0 1.5px #009;
+			text-shadow: 0 1px 0 rgba(#fff, 0.8), 0 0 1.5px #009;
 			img {
 				-webkit-box-shadow: 0 0 1.5px #009;
 				box-shadow: 0 0 1.5px #009;
@@ -544,7 +544,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 				line-height: $line_height * 2;
 
 				a {
-					text-shadow: none;
+					text-shadow: 0 1px 0 rgba(#fff, 0.8);
 					&:link, &:visited {
 						color: #006;
 					}

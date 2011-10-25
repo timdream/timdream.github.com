@@ -116,7 +116,7 @@
     margin: 16px 0; }
 
   a {
-    text-shadow: 0 0 1.5px #00f;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px blue;
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
@@ -126,13 +126,13 @@
       color: #000; }
     a:hover {
       color: #00c;
-      text-shadow: 0 0 1.5px #009; }
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
       a:hover img {
         -webkit-box-shadow: 0 0 1.5px #009;
         box-shadow: 0 0 1.5px #009; }
     a:active {
       color: #33f;
-      text-shadow: 0 0 1.5px #009; }
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
       a:active img {
         -webkit-box-shadow: 0 0 1.5px #009;
         box-shadow: 0 0 1.5px #009; }
@@ -402,7 +402,7 @@
       font-size: 18px;
       line-height: 32px; }
       body > section#talks ul a {
-        text-shadow: none; }
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
         body > section#talks ul a:link, body > section#talks ul a:visited {
           color: #006; }
         body > section#talks ul a:hover {
