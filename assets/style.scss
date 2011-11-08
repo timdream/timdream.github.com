@@ -383,6 +383,14 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 			}
 		}
 
+		.part:not(:last-child) {
+			&:after {
+				content: '§';
+				@include dim;
+				text-align: center;
+			}
+		}
+
 		&#about {
 			font-size: $font_size * 2;
 			line-height: $line_height * 2;
@@ -446,13 +454,6 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 		&#works {
 			&:hover > section:not(:hover) {
 				opacity: 0.7;
-			}
-			.part:not(:last-child) {
-				&:after {
-					content: '§';
-					@include dim;
-					text-align: center;
-				}
 			}
 			section {
 				max-width: 800px;

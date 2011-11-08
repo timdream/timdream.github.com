@@ -293,6 +293,15 @@
         font-size: 24px;
         color: #c0c0ce;
         text-align: center; }
+    body > section .part:not(:last-child):after {
+      content: '§';
+      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
+      display: block;
+      line-height: 32px;
+      margin: 16px 0;
+      font-size: 24px;
+      color: #c0c0ce;
+      text-align: center; }
     body > section#about {
       font-size: 24px;
       line-height: 32px; }
@@ -335,15 +344,6 @@
             box-shadow: 0 0 2px #00f; }
     body > section#works:hover > section:not(:hover) {
       opacity: 0.7; }
-    body > section#works .part:not(:last-child):after {
-      content: '§';
-      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
-      display: block;
-      line-height: 32px;
-      margin: 16px 0;
-      font-size: 24px;
-      color: #c0c0ce;
-      text-align: center; }
     body > section#works section {
       max-width: 800px;
       margin: 16px auto;
