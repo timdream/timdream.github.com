@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # Renew this hash every time to invalidate current cache
-# hash 851f4f82eb1cc0e5850e7c8c256092b0
+# hash f294857ffae0f677dc5835b80953845a
 
 # Files to ask browsers to cache even when user hits reload
 CACHE:
@@ -19,6 +19,7 @@ CACHE:
 /works/memoryworks.png
 /works/wordcloud.png
 /works/wretchleech.png
+/works/stellarium-zh.png
 
 # Yes, it also works for remote files, but we will be unable to track their changes
 //ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
