@@ -26,8 +26,10 @@ CACHE:
 http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff
 http://themes.googleusercontent.com/static/fonts/merriweather/v2/ZvcMqxEwPfh2qDWBPxn6nn06qf9KHRHwsVx7iw5MXmY.ttf
+http://themes.googleusercontent.com/static/fonts/merriweather/v3/ZvcMqxEwPfh2qDWBPxn6nhAPw1J91axKNXP_-QX9CC8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v2/CA1k7SlXcY5kvI81M_R28Y7PgI6IeGWgqdOlp0TQlJM.ttf
+http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v3/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200
 
 # "*" Below guarantees non-cached files can be accessed when network is available
