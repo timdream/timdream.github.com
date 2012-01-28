@@ -199,8 +199,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     color: $text_color;
     background: url($cobalt-canvas-texture) $bg_color;
     text-shadow:
-    0 0.1em 0.05em lighten($text_color, 40%),
-    0 -0.1em 0.05em darken($text_color, 40%);
+    0 1px lighten($text_color, 40%),
+    0 -1px darken($text_color, 40%);
 
     padding-bottom: 2em;
 
