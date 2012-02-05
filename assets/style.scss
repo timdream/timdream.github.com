@@ -269,6 +269,15 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         }
       }
       //@include section_sign;
+
+      @media (max-width: 480px) {
+        > li {
+          display: block;
+          &:after {
+            content: none;
+          }
+        }
+      }
     }
   }
   #share {
@@ -291,7 +300,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     -o-transform: translateX(32px + 60px + $line_height);
     transform: translateX(32px + 60px + $line_height);
 
-    html:not(.applicationcache-offline) &:hover, html:not(.applicationcache-offline).touch & {
+    html:not(.applicationcache-offline) &:hover,
+    html:not(.applicationcache-offline).touch & {
     //&.show {
       -webkit-transform: none;
       -moz-transform: none;
@@ -325,6 +335,44 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     > p {
       left: 64px * 3 + $line_height;
     }
+
+    @media (max-width: 480px) {
+      height: 64px * 4;
+      width: 100%;
+      background-position: center top;
+      margin: 0;
+
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none;
+
+      html.applicationcache-offline & {
+        height: 64px;
+        margin-bottom: $line_height;
+        > * {
+          display: none;
+        }
+      }
+      > #fblike {
+        left: 50%;
+        top: 64px + $line_height;
+        margin-left: -32px;
+      }
+      > #gplusone {
+        left: 50%;
+        top: 64px * 2 + $line_height;
+        margin-left: -32px;
+      }
+      > p {
+        left: 0;
+        top: 64px * 3 + $line_height;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
   }
   body > section {
     margin: $line_height auto;
@@ -399,6 +447,9 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
       }
       .make {
         font-size: 3em;
+        @media (max-width: 480px) {
+          font-size: 2em;
+        }
         line-height: 1.33em;
         font-family: "Gloria Hallelujah", cursive;
         //text-indent: 0.5em;
@@ -515,6 +566,18 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           margin-bottom: $line_height;
         }
 
+        @media (max-width: 480px) {
+          > header {
+            img {
+              float: none !important;
+              display: block;
+              margin: $line_height auto !important;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+
         ul.tech {
           list-style: none;
           margin: 0;
@@ -544,6 +607,13 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         font-size: $font_size * 1.5;
         line-height: $line_height * 2;
 
+        @media (max-width: 480px) {
+          padding: 0;
+          > li {
+            list-style: none;
+          }
+        }
+
         a {
           text-shadow: 0 1px 0 rgba(#fff, 0.8);
           &:link, &:visited {
@@ -564,9 +634,25 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           -o-transition: opacity 0.3s;
           transition: opacity 0.3s;
 
+          @media (max-width: 480px) {
+            list-style: none;
+            &:after {
+              content: '·';
+              display: block;
+              text-align: center;
+              color: #ccc;
+            }
+            &:last-child:after {
+              content: none;
+            }
+          }
+
           padding-bottom: $line_height * 0.5;
           > .title {
             font-size: $font_size * 2;
+            @media (max-width: 480px) {
+              font-size: $font_size * 1.5;
+            }
             font-weight: bold;
           }
         }

@@ -195,7 +195,6 @@
           content: ' · '; }
         nav > ul > li:last-child:after {
           content: none; }
-
   #share {
     background: transparent url("./tiramisu-icon-64-shadow.png") left center no-repeat;
     line-height: 32px;
@@ -239,7 +238,6 @@
       left: 144px; }
     #share > p {
       left: 208px; }
-
   body > section {
     margin: 16px auto;
     max-width: 700px;
@@ -422,3 +420,67 @@
           font-weight: bold; }
       body > section#talks ul:hover > li:not(:hover) {
         opacity: 0.7; } }
+    @media screen and (max-width: 480px) {
+      nav > ul > li {
+        display: block; }
+        nav > ul > li:after {
+          content: none; } }
+
+  @media screen and (max-width: 480px) {
+    #share {
+      height: 256px;
+      width: 100%;
+      background-position: center top;
+      margin: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none; }
+      html.applicationcache-offline #share {
+        height: 64px;
+        margin-bottom: 16px; }
+        html.applicationcache-offline #share > * {
+          display: none; }
+      #share > #fblike {
+        left: 50%;
+        top: 80px;
+        margin-left: -32px; }
+      #share > #gplusone {
+        left: 50%;
+        top: 144px;
+        margin-left: -32px; }
+      #share > p {
+        left: 0;
+        top: 208px;
+        width: 100%;
+        text-align: center; } }
+
+      @media screen and (max-width: 480px) {
+        body > section#about .make {
+          font-size: 2em; } }
+    @media screen and (max-width: 480px) {
+      body > section#works section > header img {
+        float: none !important;
+        display: block;
+        margin: 16px auto !important;
+        max-width: 100%;
+        height: auto; } }
+    @media screen and (max-width: 480px) {
+      body > section#talks ul {
+        padding: 0; }
+        body > section#talks ul > li {
+          list-style: none; } }
+      @media screen and (max-width: 480px) {
+        body > section#talks ul > li {
+          list-style: none; }
+          body > section#talks ul > li:after {
+            content: '·';
+            display: block;
+            text-align: center;
+            color: #ccc; }
+          body > section#talks ul > li:last-child:after {
+            content: none; } }
+        @media screen and (max-width: 480px) {
+          body > section#talks ul > li > .title {
+            font-size: 18px; } }
