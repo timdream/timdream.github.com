@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # Renew this hash every time to invalidate current cache
-# hash be4046f4743d321052bd6667573c264c
+# hash 6e88fcda678018b387cdfa22420e0a55
 
 # Files to ask browsers to cache even when user hits reload
 CACHE:
@@ -9,6 +9,8 @@ CACHE:
 /assets/script.min.js
 /assets/style.css
 /assets/tiramisu-icon-64-shadow.png
+/assets/icons/user_gray.png
+/assets/icons/wrench.png
 /favicon.ico
 /works/coscup-2011-landing.png
 /works/coscup-icon.png

@@ -578,15 +578,26 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           }
         }
 
+        p.client {
+          padding: 0 24px;
+          margin: 6px 0;
+          background: url('./icons/user_gray.png') left 4px no-repeat transparent;
+
+          font-size: 0.8em;
+          > a {
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
         ul.tech {
           list-style: none;
           margin: 0;
-          padding: 0;
+          padding: 0 24px;
 
-          &:before {
-            content: "Technologies: ";
-            display: block;
-          }
+          background: url('./icons/wrench.png') left 4px no-repeat transparent;
 
           > li {
             display: inline-block;
