@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # Renew this hash every time to invalidate current cache
-# hash ee9b446564488caf04dd8817bb0f1797
+# hash 7c6bec13dee7cd2472324f2acb1193ef
 
 # Files to ask browsers to cache even when user hits reload
 CACHE:
@@ -24,7 +24,7 @@ CACHE:
 /works/stellarium-zh.png
 
 # Yes, it also works for remote files, but we will be unable to track their changes
-//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
+//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js
 http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v4/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v4/CA1k7SlXcY5kvI81M_R28d8e37SXvEhDxPg1zCoHdaI.ttf

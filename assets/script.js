@@ -1,9 +1,9 @@
 
-jQuery(function ($) {
+jQuery(function docReady($) {
 
   var reloadOnNextHashChange = false;
 
-  function handleHash () {
+  function handleHash() {
     var hash = window.location.hash;
 
     // prevent scrolling by hide the element first and use replace()
@@ -13,9 +13,9 @@ jQuery(function ($) {
     if (reloadOnNextHashChange) window.location.reload();
   }
 
-  $('.contact a').bind(
+  $('.contact a').on(
     'click',
-    function (ev) {
+    function contactClick(ev) {
       ev.preventDefault();
       window.open(this.href, '', 'width=480,height=360');
     }
@@ -23,7 +23,7 @@ jQuery(function ($) {
 
   $('.make').one(
     'dblclick',
-    function (ev) {
+    function makeDblclick(ev) {
       ev.preventDefault();
       $(this).attr('contenteditable', true).focus();
     }
@@ -33,10 +33,12 @@ jQuery(function ($) {
     window.onhashchange = handleHash;
   } else {
     // no crappy iframe of IE6/7, just make sure $('a') links works
-    $('a').live(
+    $(window).on(
       'click',
-      function () {
-        if (ev.which == 2 || ev.metaKey) return true;
+      'a',
+      function shimmedHashchange(ev) {
+        if (ev.which == 2 || ev.metaKey)
+          return true;
 
         var $this = $(this);
 
@@ -54,7 +56,7 @@ jQuery(function ($) {
   if (window.applicationCache) {
     window.applicationCache.addEventListener(
       'error', // can't get manifest file - currently offline
-      function () {
+      function appCacheError() {
         $('html').addClass('applicationcache-offline');
       }
     );
