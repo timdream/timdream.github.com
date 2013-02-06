@@ -1,3 +1,4 @@
+$font_family: Times, PMingLiu, serif;
 $font_size: 12px;
 $line_height: 16px;
 
@@ -150,7 +151,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
   }
   body {
     font-size: $font_size;
-    font-family: Times, serif;
+    font-family: $font_family;
     line-height: $line_height;
     margin: 0; padding: 0;
     background: #e0e0e0 url($bg);
@@ -204,7 +205,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 
     padding-bottom: 2em;
 
-    font-family: 'Merriweather', 'Bookman Old Style', Times, serif;
+    font-family: 'Merriweather', 'Bookman Old Style', $font_family;
 
     -webkit-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000;
