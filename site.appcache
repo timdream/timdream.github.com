@@ -24,6 +24,7 @@ CACHE:
 /works/stellarium-zh.png
 
 # Yes, it also works for remote files, but we will be unable to track their changes
+# Unfortunately we cannot use HTTPS urls for these URLs.
 //ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js
 http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700
 http://themes.googleusercontent.com/static/fonts/gloriahallelujah/v4/CA1k7SlXcY5kvI81M_R28bhi4u8Y7RaAY_ljmVkqsb8.woff
