@@ -519,6 +519,8 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
 
+        clear: both;
+
         & + section {
           margin-top: $line_height * 2;
         }
@@ -539,6 +541,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
             img {
               float: right;
               margin-left: $line_height;
+              margin-right: 0;
             }
           }
           p > img {
@@ -556,7 +559,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
             float: left;
             margin-right: $line_height;
             margin-top: $line_height / 3;
-            width: 300px;
+            margin-bottom: $line_height / 3;
             background-color: #ccc;
           }
         }

@@ -129,17 +129,17 @@
       color: #00c;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
       a:hover img {
-        -webkit-box-shadow: 0 0 1.5px #000099;
-        box-shadow: 0 0 1.5px #000099; }
+        -webkit-box-shadow: 0 0 1.5px #009;
+        box-shadow: 0 0 1.5px #009; }
     a:active {
       color: #33f;
       text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
       a:active img {
-        -webkit-box-shadow: 0 0 1.5px #000099;
-        box-shadow: 0 0 1.5px #000099; }
+        -webkit-box-shadow: 0 0 1.5px #009;
+        box-shadow: 0 0 1.5px #009; }
     a img {
-      -webkit-box-shadow: 0 0 1.5px blue;
-      box-shadow: 0 0 1.5px blue; }
+      -webkit-box-shadow: 0 0 1.5px #00f;
+      box-shadow: 0 0 1.5px #00f; }
 
   body > header {
     color: #123e92;
@@ -147,8 +147,8 @@
     text-shadow: 0 1px #81a6ef, 0 -1px black;
     padding-bottom: 2em;
     font-family: "Merriweather", "Bookman Old Style", Times, PMingLiu, serif;
-    -webkit-box-shadow: 0 0 5px black;
-    box-shadow: 0 0 5px black;
+    -webkit-box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #000;
     -webkit-animation-name: dropDown;
     -webkit-animation-duration: 0.7s;
     -moz-animation-name: dropDown;
@@ -252,7 +252,7 @@
     animation-duration: 0.7s; }
     body > section:after, body > section:before {
       content: '§';
-      text-shadow: 0 0 1px white, 0 0 3px white, 0 0 5px white;
+      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
       display: block;
       line-height: 32px;
       margin: 16px 0;
@@ -272,7 +272,7 @@
       display: none; }
     body > section > header:after {
       content: '§';
-      text-shadow: 0 0 1px white, 0 0 3px white, 0 0 5px white;
+      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
       display: block;
       line-height: 32px;
       margin: 16px 0;
@@ -285,7 +285,7 @@
       text-align: center; }
       body > section .preface:after {
         content: '§';
-        text-shadow: 0 0 1px white, 0 0 3px white, 0 0 5px white;
+        text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
         display: block;
         line-height: 32px;
         margin: 16px 0;
@@ -294,7 +294,7 @@
         text-align: center; }
     body > section .part:not(:last-child):after {
       content: '§';
-      text-shadow: 0 0 1px white, 0 0 3px white, 0 0 5px white;
+      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
       display: block;
       line-height: 32px;
       margin: 16px 0;
@@ -313,7 +313,7 @@
         text-align: center;
         padding: 32px 0;
         color: #000;
-        text-shadow: 0 0 1.5px black; }
+        text-shadow: 0 0 1.5px #000; }
         body > section#about .make small {
           font-size: 0.5em; }
         body > section#about .make #dreams a {
@@ -339,8 +339,8 @@
           body > section#follow > ul > li > img {
             margin: 32px 0;
             background-color: rgba(204, 204, 204, 0.5);
-            -webkit-box-shadow: 0 0 2px blue;
-            box-shadow: 0 0 2px blue; }
+            -webkit-box-shadow: 0 0 2px #00f;
+            box-shadow: 0 0 2px #00f; }
     body > section#works:hover > section:not(:hover) {
       opacity: 0.7; }
     body > section#works section {
@@ -352,7 +352,8 @@
       -moz-transition: opacity 0.3s;
       -ms-transition: opacity 0.3s;
       -o-transition: opacity 0.3s;
-      transition: opacity 0.3s; }
+      transition: opacity 0.3s;
+      clear: both; }
       body > section#works section + section {
         margin-top: 32px; }
       body > section#works section .date {
@@ -363,7 +364,8 @@
         font-weight: bold; }
       body > section#works section:nth-child(odd) > header img {
         float: right;
-        margin-left: 16px; }
+        margin-left: 16px;
+        margin-right: 0; }
       body > section#works section:nth-child(odd) p > img {
         float: left;
         margin-right: 16px;
@@ -376,7 +378,7 @@
           float: left;
           margin-right: 16px;
           margin-top: 5.33333px;
-          width: 300px;
+          margin-bottom: 5.33333px;
           background-color: #ccc; }
       body > section#works section p > img {
         float: right;
@@ -400,7 +402,7 @@
           display: inline-block;
           font-size: 0.8em;
           padding: 0 0.3em;
-          border: 1px solid #cccccc;
+          border: 1px solid #ccc;
           border-radius: 5px;
           background-color: rgba(255, 255, 255, 0.5); }
     body > section#talks ul {
@@ -505,7 +507,7 @@
   overflow: hidden;
   background-color: rgba(245, 245, 245, 0.9);
   color: #000;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   -webkit-box-shadow: 0 0 5px #e0e0e0;
   box-shadow: 0 0 5px #e0e0e0;
   border-top: none;
