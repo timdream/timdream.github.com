@@ -88,6 +88,28 @@
   <p class="preface">Tune in to my <a href="http://blog.timc.idv.tw/">blog</a> for the latest updates on my works.</p>
   <div class="part">
     <section>
+      <header><a href="https://github.com/timdream/jszhuyin"><img src="./works/jszhuyin-firefox.png" width="300" height="200" alt="" />JSZhuyin IME (<span lang="zh-TW">JS 注音輸入法</span>)</a></header>
+      <p class="date">Since Nov 2011, re-released in Jul 2013</p>
+      <p class="keypoint">An “intelligent” Chinese Zhuyin IME for mobile, entirely developed in JavaScript.</p>
+      <p><a href="https://en.wikipedia.org/wiki/Input_method">Input method</a> is a piece of software for users of East Asian languages to type, since you cannot really put a thousand of characters on a keyboard.
+JSZhuyin is an implementation of the Zhuyin input method, in which it would convert the typed <a href="https://en.wikipedia.org/wiki/Bopomofo_(script)">Bopomofo</a> symbols to Traidional Chinese characters. The “intelligence” refers it’s ability to guess the desired phrases for the user.</p>
+      <p>The project is the first implementation of input method in JavaScript to offer the “intelligence” capability.
+Being written entirely in JavaScript also means it does not require network connection and server logic, contrary to many online services.</p>
+      <p>The project was first developed in Gaia during December 2011.
+In July 2013, I picked up as a personal project and rewritten it to make it more rebust and efficient, usable on low-end hardware.
+<a href="http://timdream.org/jszhuyin/">demonstration</a> can be found here.
+The IME have also been wrapped as a <a href="https://addons.mozilla.org/en-US/firefox/addon/jszhuyin-ime-for-firefox/">Firefox add-on</a>, usable on desktop.</p>
+      <p>I did <a href="http://blog.timc.idv.tw/posts/coscup2013-jszhuyin-talk/">a talk</a> about this project in COSCUP 2013.</p>
+      <p class="client">Initially for <a href="https://mozilla.org/">Mozilla</a>, a personal project since.</p>
+      <ul class="tech">
+        <li>JavaScript</li>
+        <li>Web Workers</li>
+        <li>IndexedDB</li>
+        <li>AppCache</li>
+      </ul>
+
+    </section>
+    <section>
       <header><a href="https://github.com/mozilla-b2g/gaia"><img src="./works/fxos-gaia.jpg" width="220" height="330" alt="" />Boot2Gecko: Gaia (Firefox OS User Interface)</a></header>
       <p class="date">Since Nov 2011</p>
       <p class="keypoint">A phone user interface entirely written in web technologies, with a set of client-side web applications driven by non-trivial JavaScript logic.</p>
