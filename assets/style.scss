@@ -228,6 +228,11 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 
       font-size: $font_size * 4;
       line-height: $line_height * 4;
+
+      @media (max-width: 480px) {
+        font-size: $font_size * 2;
+        line-height: $line_height * 2;
+      }
     }
     #aka {
       margin: 0 auto;
@@ -236,6 +241,14 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 
       font-size: $font_size * 2;
       line-height: $line_height * 2;
+
+      @media (max-width: 480px) {
+        font-size: $font_size * 1.5;
+        line-height: $line_height * 2;
+
+        padding: $line_height / 2 1em;
+      }
+
       font-weight: bold;
       > span {
         white-space: nowrap;
@@ -261,6 +274,12 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         display: inline;
         line-height: $line_height * 2;
         font-size: $font_size * 2;
+
+        @media (max-width: 480px) {
+          line-height: $line_height * 2;
+          font-size: $font_size * 1.5;
+        }
+
         white-space: nowrap;
         &:after {
           content: ' · ';
@@ -270,15 +289,6 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         }
       }
       //@include section_sign;
-
-      @media (max-width: 480px) {
-        > li {
-          display: block;
-          &:after {
-            content: none;
-          }
-        }
-      }
     }
   }
   #share {
@@ -424,6 +434,11 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     .preface {
       font-size: $font_size * 2;
       line-height: $line_height * 2;
+      @media (max-width: 480px) {
+        line-height: $line_height * 2;
+        font-size: $font_size * 1.5;
+      }
+
       text-align: center;
       &:after {
         content: '§';
@@ -443,6 +458,10 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     &#about {
       font-size: $font_size * 2;
       line-height: $line_height * 2;
+      @media (max-width: 480px) {
+        line-height: $line_height * 2;
+        font-size: $font_size * 1.5;
+      }
       strong {
         white-space: nowrap;
       }

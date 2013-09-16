@@ -195,6 +195,7 @@
           content: ' · '; }
         nav > ul > li:last-child:after {
           content: none; }
+
   #share {
     background: transparent url("./tiramisu-icon-64-shadow.png") left center no-repeat;
     line-height: 32px;
@@ -430,11 +431,18 @@
       body > section#talks ul:hover > li:not(:hover) {
         opacity: 0.7; } }
     @media screen and (max-width: 480px) {
-      nav > ul > li {
-        display: block; }
-        nav > ul > li:after {
-          content: none; } }
-
+      body > header h1 {
+        font-size: 24px;
+        line-height: 32px; } }
+    @media screen and (max-width: 480px) {
+      body > header #aka {
+        font-size: 18px;
+        line-height: 32px;
+        padding: 8px 1em; } }
+      @media screen and (max-width: 480px) {
+        nav > ul > li {
+          line-height: 32px;
+          font-size: 18px; } }
   @media screen and (max-width: 480px) {
     #share {
       height: 256px;
@@ -465,6 +473,14 @@
         width: 100%;
         text-align: center; } }
 
+    @media screen and (max-width: 480px) {
+      body > section .preface {
+        line-height: 32px;
+        font-size: 18px; } }
+    @media screen and (max-width: 480px) {
+      body > section#about {
+        line-height: 32px;
+        font-size: 18px; } }
       @media screen and (max-width: 480px) {
         body > section#about .make {
           font-size: 2em; } }
