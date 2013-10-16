@@ -100,7 +100,7 @@
     opacity: 1; } }
 
 @media screen {
-  html, :root {
+  html {
     margin: 0;
     padding: 0; }
 
@@ -430,20 +430,20 @@
           font-weight: bold; }
       body > section#talks ul:hover > li:not(:hover) {
         opacity: 0.7; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > header h1 {
         font-size: 24px;
         line-height: 32px; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > header #aka {
         font-size: 18px;
         line-height: 32px;
         padding: 8px 1em; } }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 800px) {
         nav > ul > li {
           line-height: 32px;
           font-size: 18px; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 800px) {
     #share {
       height: 256px;
       width: 100%;
@@ -473,30 +473,30 @@
         width: 100%;
         text-align: center; } }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > section .preface {
         line-height: 32px;
         font-size: 18px; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > section#about {
         line-height: 32px;
         font-size: 18px; } }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 800px) {
         body > section#about .make {
           font-size: 2em; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > section#works section > header img {
         float: none !important;
         display: block;
         margin: 16px auto !important;
         max-width: 100%;
         height: auto; } }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       body > section#talks ul {
         padding: 0; }
         body > section#talks ul > li {
           list-style: none; } }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 800px) {
         body > section#talks ul > li {
           list-style: none; }
           body > section#talks ul > li:after {
@@ -506,7 +506,7 @@
             color: #ccc; }
           body > section#talks ul > li:last-child:after {
             content: none; } }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 800px) {
           body > section#talks ul > li > .title {
             font-size: 18px; } }
 /* AppCache UI */

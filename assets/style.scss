@@ -146,7 +146,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
 }
 
 @media screen {
-  html, :root {
+  html {
     margin: 0; padding: 0;
   }
   body {
@@ -229,7 +229,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
       font-size: $font_size * 4;
       line-height: $line_height * 4;
 
-      @media (max-width: 480px) {
+      @media (max-width: 800px) {
         font-size: $font_size * 2;
         line-height: $line_height * 2;
       }
@@ -242,7 +242,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
       font-size: $font_size * 2;
       line-height: $line_height * 2;
 
-      @media (max-width: 480px) {
+      @media (max-width: 800px) {
         font-size: $font_size * 1.5;
         line-height: $line_height * 2;
 
@@ -275,7 +275,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         line-height: $line_height * 2;
         font-size: $font_size * 2;
 
-        @media (max-width: 480px) {
+        @media (max-width: 800px) {
           line-height: $line_height * 2;
           font-size: $font_size * 1.5;
         }
@@ -347,7 +347,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
       left: 64px * 3 + $line_height;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 800px) {
       height: 64px * 4;
       width: 100%;
       background-position: center top;
@@ -434,7 +434,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     .preface {
       font-size: $font_size * 2;
       line-height: $line_height * 2;
-      @media (max-width: 480px) {
+      @media (max-width: 800px) {
         line-height: $line_height * 2;
         font-size: $font_size * 1.5;
       }
@@ -458,7 +458,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     &#about {
       font-size: $font_size * 2;
       line-height: $line_height * 2;
-      @media (max-width: 480px) {
+      @media (max-width: 800px) {
         line-height: $line_height * 2;
         font-size: $font_size * 1.5;
       }
@@ -467,7 +467,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
       }
       .make {
         font-size: 3em;
-        @media (max-width: 480px) {
+        @media (max-width: 800px) {
           font-size: 2em;
         }
         line-height: 1.33em;
@@ -589,7 +589,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           margin-bottom: $line_height;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 800px) {
           > header {
             img {
               float: none !important;
@@ -641,7 +641,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
         font-size: $font_size * 1.5;
         line-height: $line_height * 2;
 
-        @media (max-width: 480px) {
+        @media (max-width: 800px) {
           padding: 0;
           > li {
             list-style: none;
@@ -668,7 +668,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           -o-transition: opacity 0.3s;
           transition: opacity 0.3s;
 
-          @media (max-width: 480px) {
+          @media (max-width: 800px) {
             list-style: none;
             &:after {
               content: '·';
@@ -684,7 +684,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
           padding-bottom: $line_height * 0.5;
           > .title {
             font-size: $font_size * 2;
-            @media (max-width: 480px) {
+            @media (max-width: 800px) {
               font-size: $font_size * 1.5;
             }
             font-weight: bold;
