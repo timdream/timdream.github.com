@@ -3,8 +3,8 @@
 # Download Remote files to include them into hash calculation
 
 mkdir -p .tmp
-wget -q -O .tmp/webfont 'http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700'
-wget -q -O .tmp/gravatar 'http://gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200'
+wget -q -O .tmp/webfont 'https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Merriweather:700'
+wget -q -O .tmp/gravatar 'https://gravatar.com/avatar/2becaf1073957bdad2f06e183731131d?s=200'
 
 # Update hash value in cache.manifest by generate md5 hash of all local files
 
