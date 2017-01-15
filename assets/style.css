@@ -1,104 +1,75 @@
+@charset "UTF-8";
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @-moz-keyframes fadeIn {
   from {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @-ms-keyframes fadeIn {
   from {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @-webkit-keyframes dropDown {
   from {
     -webkit-transform: translateY(-200px); }
-
   90% {
     -webkit-transform: translateY(64px); }
-
   to {
     -webkit-transform: translateY(0); } }
-
 @-moz-keyframes dropDown {
   from {
     -moz-transform: translateY(-200px); }
-
   90% {
     -moz-transform: translateY(64px); }
-
   to {
     -moz-transform: translateY(0); } }
-
 @-ms-keyframes dropDown {
   from {
     -ms-transform: translateY(-200px); }
-
   90% {
     -ms-transform: translateY(64px); }
-
   to {
     -ms-transform: translateY(0); } }
-
 @keyframes dropDown {
   from {
     transform: translateY(-200px); }
-
   90% {
     transform: translateY(64px); }
-
   to {
     transform: translateY(0); } }
-
 @-webkit-keyframes dropShow {
   from {
     opacity: 0; }
-
   90% {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @-moz-keyframes dropShow {
   from {
     opacity: 0; }
-
   90% {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @-ms-keyframes dropShow {
   from {
     opacity: 0; }
-
   90% {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @keyframes dropShow {
   from {
     opacity: 0; }
-
   90% {
     opacity: 0; }
-
   to {
     opacity: 1; } }
-
 @media screen {
   html {
     margin: 0;
@@ -117,7 +88,7 @@
     margin: 16px 0; }
 
   a {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px blue;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #00f;
     -webkit-transition: color 0.3s;
     -moz-transition: color 0.3s;
     -o-transition: color 0.3s;
@@ -127,13 +98,13 @@
       color: #000; }
     a:hover {
       color: #00c;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #009; }
       a:hover img {
         -webkit-box-shadow: 0 0 1.5px #009;
         box-shadow: 0 0 1.5px #009; }
     a:active {
       color: #33f;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #000099; }
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #009; }
       a:active img {
         -webkit-box-shadow: 0 0 1.5px #009;
         box-shadow: 0 0 1.5px #009; }
@@ -163,14 +134,25 @@
       max-width: 700px;
       padding: 32px 0.5em 16px 0.5em;
       font-size: 48px;
-      line-height: 64px; }
+      line-height: 64px; } }
+    @media screen and (max-width: 800px) {
+      body > header h1 {
+        font-size: 24px;
+        line-height: 32px; } }
+@media screen {
     body > header #aka {
       margin: 0 auto;
       max-width: 700px;
       padding: 16px 1em;
       font-size: 24px;
       line-height: 32px;
-      font-weight: bold; }
+      font-weight: bold; } }
+    @media screen and (max-width: 800px) {
+      body > header #aka {
+        font-size: 18px;
+        line-height: 32px;
+        padding: 8px 1em; } }
+@media screen {
       body > header #aka > span {
         white-space: nowrap; }
 
@@ -190,7 +172,12 @@
         display: inline;
         line-height: 32px;
         font-size: 24px;
-        white-space: nowrap; }
+        white-space: nowrap; } }
+      @media screen and (max-width: 800px) {
+        nav > ul > li {
+          line-height: 32px;
+          font-size: 18px; } }
+@media screen {
         nav > ul > li:after {
           content: ' · '; }
         nav > ul > li:last-child:after {
@@ -215,15 +202,15 @@
     -ms-transform: translateX(108px);
     -o-transform: translateX(108px);
     transform: translateX(108px); }
-    html:not(.applicationcache-offline) #share:hover, html:not(.applicationcache-offline).touch #share {
+    body:not(.hide-share) #share:hover, body:not(.hide-share).touch #share {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
-      html:not(.applicationcache-offline) #share:hover > *, html:not(.applicationcache-offline).touch #share > * {
+      body:not(.hide-share) #share:hover > *, body:not(.hide-share).touch #share > * {
         opacity: 1; }
-    html.applicationcache-offline #share > * {
+    body.hide-share #share > * {
       opacity: 0; }
     #share > * {
       position: absolute;
@@ -238,7 +225,38 @@
     #share > #gplusone {
       left: 144px; }
     #share > p {
-      left: 208px; }
+      left: 208px; } }
+  @media screen and (max-width: 800px) {
+    #share {
+      height: 256px;
+      width: 100%;
+      background-position: center top;
+      margin: 0;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+      transform: none; }
+      body.hide-share #share {
+        height: 64px;
+        margin-bottom: 16px; }
+        body.hide-share #share > * {
+          display: none; }
+      #share > #fblike {
+        left: 50%;
+        top: 80px;
+        margin-left: -32px; }
+      #share > #gplusone {
+        left: 50%;
+        top: 144px;
+        margin-left: -32px; }
+      #share > p {
+        left: 0;
+        top: 208px;
+        width: 100%;
+        text-align: center; } }
+
+@media screen {
   body > section {
     margin: 16px auto;
     max-width: 700px;
@@ -283,7 +301,12 @@
     body > section .preface {
       font-size: 24px;
       line-height: 32px;
-      text-align: center; }
+      text-align: center; } }
+    @media screen and (max-width: 800px) {
+      body > section .preface {
+        line-height: 32px;
+        font-size: 18px; } }
+@media screen {
       body > section .preface:after {
         content: '§';
         text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
@@ -304,7 +327,12 @@
       text-align: center; }
     body > section#about {
       font-size: 24px;
-      line-height: 32px; }
+      line-height: 32px; } }
+    @media screen and (max-width: 800px) {
+      body > section#about {
+        line-height: 32px;
+        font-size: 18px; } }
+@media screen {
       body > section#about strong {
         white-space: nowrap; }
       body > section#about .make {
@@ -314,7 +342,11 @@
         text-align: center;
         padding: 32px 0;
         color: #000;
-        text-shadow: 0 0 1.5px #000; }
+        text-shadow: 0 0 1.5px #000; } }
+      @media screen and (max-width: 800px) {
+        body > section#about .make {
+          font-size: 2em; } }
+@media screen {
         body > section#about .make small {
           font-size: 0.5em; }
         body > section#about .make #dreams a {
@@ -384,7 +416,15 @@
       body > section#works section p > img {
         float: right;
         margin-left: 16px;
-        margin-bottom: 16px; }
+        margin-bottom: 16px; } }
+    @media screen and (max-width: 800px) {
+      body > section#works section > header img {
+        float: none !important;
+        display: block;
+        margin: 16px auto !important;
+        max-width: 100%;
+        height: auto; } }
+@media screen {
       body > section#works section p.client {
         padding: 0 24px;
         margin: 6px 0;
@@ -409,7 +449,13 @@
     body > section#talks ul {
       margin: 0 auto;
       font-size: 18px;
-      line-height: 32px; }
+      line-height: 32px; } }
+    @media screen and (max-width: 800px) {
+      body > section#talks ul {
+        padding: 0; }
+        body > section#talks ul > li {
+          list-style: none; } }
+@media screen {
       body > section#talks ul a {
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
         body > section#talks ul a:link, body > section#talks ul a:visited {
@@ -424,78 +470,7 @@
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
-        padding-bottom: 8px; }
-        body > section#talks ul > li > .title {
-          font-size: 24px;
-          font-weight: bold; }
-      body > section#talks ul:hover > li:not(:hover) {
-        opacity: 0.7; } }
-    @media screen and (max-width: 800px) {
-      body > header h1 {
-        font-size: 24px;
-        line-height: 32px; } }
-    @media screen and (max-width: 800px) {
-      body > header #aka {
-        font-size: 18px;
-        line-height: 32px;
-        padding: 8px 1em; } }
-      @media screen and (max-width: 800px) {
-        nav > ul > li {
-          line-height: 32px;
-          font-size: 18px; } }
-  @media screen and (max-width: 800px) {
-    #share {
-      height: 256px;
-      width: 100%;
-      background-position: center top;
-      margin: 0;
-      -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
-      transform: none; }
-      html.applicationcache-offline #share {
-        height: 64px;
-        margin-bottom: 16px; }
-        html.applicationcache-offline #share > * {
-          display: none; }
-      #share > #fblike {
-        left: 50%;
-        top: 80px;
-        margin-left: -32px; }
-      #share > #gplusone {
-        left: 50%;
-        top: 144px;
-        margin-left: -32px; }
-      #share > p {
-        left: 0;
-        top: 208px;
-        width: 100%;
-        text-align: center; } }
-
-    @media screen and (max-width: 800px) {
-      body > section .preface {
-        line-height: 32px;
-        font-size: 18px; } }
-    @media screen and (max-width: 800px) {
-      body > section#about {
-        line-height: 32px;
-        font-size: 18px; } }
-      @media screen and (max-width: 800px) {
-        body > section#about .make {
-          font-size: 2em; } }
-    @media screen and (max-width: 800px) {
-      body > section#works section > header img {
-        float: none !important;
-        display: block;
-        margin: 16px auto !important;
-        max-width: 100%;
-        height: auto; } }
-    @media screen and (max-width: 800px) {
-      body > section#talks ul {
-        padding: 0; }
-        body > section#talks ul > li {
-          list-style: none; } }
+        padding-bottom: 8px; } }
       @media screen and (max-width: 800px) {
         body > section#talks ul > li {
           list-style: none; }
@@ -506,97 +481,13 @@
             color: #ccc; }
           body > section#talks ul > li:last-child:after {
             content: none; } }
+@media screen {
+        body > section#talks ul > li > .title {
+          font-size: 24px;
+          font-weight: bold; } }
         @media screen and (max-width: 800px) {
           body > section#talks ul > li > .title {
             font-size: 18px; } }
-/* AppCache UI */
-#appcache_info {
-  position: absolute;
-  position: fixed;
-  top: -2em;
-  left: 1em;
-  right: 1em;
-  font: 1em sans-serif;
-  line-height: 1.8em;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  overflow: hidden;
-  background-color: rgba(245, 245, 245, 0.9);
-  color: #000;
-  border: 1px solid #ccc;
-  -webkit-box-shadow: 0 0 5px #e0e0e0;
-  box-shadow: 0 0 5px #e0e0e0;
-  border-top: none;
-  padding: 0 0.5em;
-  border-bottom-left-radius: 0.25em;
-  border-bottom-right-radius: 0.25em;
-  -webkit-transition: top 0.5s ease;
-  -moz-transition: top 0.5s ease;
-  -ms-transition: top 0.5s ease;
-  -o-transition: top 0.5s ease;
-  transition: top 0.5s ease; }
-
-#appcache_info a {
-  display: none;
-  float: right;
-  font-weight: bold;
-  text-decoration: none;
-  color: #00f; }
-
-#appcache_info.appcache-progress:after {
-  display: block;
-  float: right;
-  font-weight: bold;
-  content: attr(data-progress); }
-
-#appcache_info.appcache-updateready a,
-#appcache_info.appcache-obsolete a {
-  display: block; }
-
-body.appcache-allinfo #appcache_info.appcache-checking,
-#appcache_info.appcache-downloading,
-#appcache_info.appcache-progress,
-#appcache_info.appcache-updateready,
-#appcache_info.appcache-obsolete {
-  top: 0; }
-
-#appcache_info.appcache-updateready,
-#appcache_info.appcache-obsolete {
-  background-color: rgba(255, 245, 128, 0.9);
-  font-weight: bold; }
-
-body.appcache-allinfo #appcache_info.appcache-noupdate,
-body.appcache-allinfo #appcache_info.appcache-error,
-#appcache_info.appcache-cached {
-  top: -2em;
-  -webkit-transition: top 0.5s ease 3s;
-  -moz-transition: top 0.5s ease 3s;
-  -ms-transition: top 0.5s ease 3s;
-  -o-transition: top 0.5s ease 3s;
-  transition: top 0.5s ease 3s; }
-
-/* English (default) strings */
-#appcache_info a:before {
-  content: 'Reload Now'; }
-
-#appcache_info.appcache-checking:before {
-  content: "Checking for updates ..."; }
-
-#appcache_info.appcache-downloading:before,
-#appcache_info.appcache-progress:before {
-  content: "Downloading updates ..."; }
-
-#appcache_info.appcache-updateready:before {
-  content: 'A new version is available.'; }
-
-#appcache_info.appcache-noupdate:before {
-  content: 'No updates.'; }
-
-#appcache_info.appcache-obsolete:before {
-  content: 'This website is obsolete. Reload to see new version.'; }
-
-#appcache_info.appcache-error:before {
-  content: 'Unable to check updates.'; }
-
-#appcache_info.appcache-cached:before {
-  content: 'Download complete.'; }
+@media screen {
+      body > section#talks ul:hover > li:not(:hover) {
+        opacity: 0.7; } }
