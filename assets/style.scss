@@ -311,8 +311,7 @@ $cobalt-canvas-texture: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gVA
     -o-transform: translateX(32px + 60px + $line_height);
     transform: translateX(32px + 60px + $line_height);
 
-    body:not(.hide-share) &:hover,
-    body:not(.hide-share).touch & {
+    body:not(.hide-share) &:hover {
     //&.show {
       -webkit-transform: none;
       -moz-transform: none;

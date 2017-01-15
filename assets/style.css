@@ -202,13 +202,13 @@
     -ms-transform: translateX(108px);
     -o-transform: translateX(108px);
     transform: translateX(108px); }
-    body:not(.hide-share) #share:hover, body:not(.hide-share).touch #share {
+    body:not(.hide-share) #share:hover {
       -webkit-transform: none;
       -moz-transform: none;
       -ms-transform: none;
       -o-transform: none;
       transform: none; }
-      body:not(.hide-share) #share:hover > *, body:not(.hide-share).touch #share > * {
+      body:not(.hide-share) #share:hover > * {
         opacity: 1; }
     body.hide-share #share > * {
       opacity: 0; }

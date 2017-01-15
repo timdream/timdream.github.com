@@ -1,6 +1,8 @@
 'use strict';
 
 (function(){
+  document.documentElement.className = 'js';
+
   var handleHash = window.onhashchange = function() {
     var hash = window.location.hash;
 
