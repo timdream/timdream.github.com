@@ -335,22 +335,6 @@
 @media screen {
       body > section#about strong {
         white-space: nowrap; }
-      body > section#about .make {
-        font-size: 3em;
-        line-height: 1.33em;
-        font-family: "Gloria Hallelujah", cursive;
-        text-align: center;
-        padding: 32px 0;
-        color: #000;
-        text-shadow: 0 0 1.5px #000; } }
-      @media screen and (max-width: 800px) {
-        body > section#about .make {
-          font-size: 2em; } }
-@media screen {
-        body > section#about .make small {
-          font-size: 0.5em; }
-        body > section#about .make #dreams a {
-          text-decoration: none; }
       body > section#about .contact img {
         border: 0;
         vertical-align: middle;

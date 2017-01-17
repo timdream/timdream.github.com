@@ -464,25 +464,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
       strong {
         white-space: nowrap;
       }
-      .make {
-        font-size: 3em;
-        @media (max-width: 800px) {
-          font-size: 2em;
-        }
-        line-height: 1.33em;
-        font-family: "Gloria Hallelujah", cursive;
-        //text-indent: 0.5em;
-        text-align: center;
-        padding: $line_height * 2 0;
-        color: #000;
-        text-shadow: 0 0 1.5px #000;
-        small {
-          font-size: 0.5em;
-        }
-        #dreams a {
-          text-decoration: none;
-        }
-      }
       .contact img {
         //opacity: 0.7;
         border: 0;

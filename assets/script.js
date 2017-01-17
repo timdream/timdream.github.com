@@ -31,16 +31,6 @@
     }
   );
 
-  document.querySelector('.make').addEventListener(
-    'dblclick',
-    function makeDblclick(ev) {
-      this.removeEventListener('dblclick', makeDblclick);
-      ev.preventDefault();
-      this.setAttribute('contenteditable', true);
-      this.focus();
-    }
-  );
-
   if (navigator.doNotTrack !== '1') {
     document.body.classList.remove('hide-share');
 
