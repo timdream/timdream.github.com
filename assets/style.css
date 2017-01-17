@@ -128,7 +128,11 @@
     -ms-animation-duration: 0.7s;
     animation-name: dropDown;
     animation-duration: 0.7s;
-    margin: 0 0 16px 0; }
+    margin: 0 0 16px 0; } }
+  @media screen and (max-width: 800px) {
+    body > header {
+      padding-bottom: 1em; } }
+@media screen {
     body > header h1 {
       margin: 0 auto;
       max-width: 700px;
@@ -138,7 +142,8 @@
     @media screen and (max-width: 800px) {
       body > header h1 {
         font-size: 24px;
-        line-height: 32px; } }
+        line-height: 32px;
+        padding: 16px 0.5em 8px 0.5em; } }
 @media screen {
     body > header #aka {
       margin: 0 auto;
@@ -151,7 +156,7 @@
       body > header #aka {
         font-size: 18px;
         line-height: 32px;
-        padding: 8px 1em; } }
+        padding: 4px 0.66667em; } }
 @media screen {
       body > header #aka > span {
         white-space: nowrap; }
@@ -260,7 +265,7 @@
   body > section {
     margin: 16px auto;
     max-width: 700px;
-    padding: 0 32px;
+    padding: 0 16px;
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.7s;
     -moz-animation-name: fadeIn;
@@ -277,7 +282,13 @@
       margin: 16px 0;
       font-size: 24px;
       color: #c0c0ce;
-      text-align: center; }
+      text-align: center; } }
+    @media screen and (max-width: 800px) {
+      body > section:after, body > section:before {
+        margin: 8px 0;
+        font-size: 18px;
+        line-height: 32px; } }
+@media screen {
     html.no-js body > section:before {
       display: none; }
     body > section html.js {
@@ -297,7 +308,13 @@
       margin: 16px 0;
       font-size: 24px;
       color: #c0c0ce;
-      text-align: center; }
+      text-align: center; } }
+    @media screen and (max-width: 800px) {
+      body > section > header:after {
+        margin: 8px 0;
+        font-size: 18px;
+        line-height: 32px; } }
+@media screen {
     body > section .preface {
       font-size: 24px;
       line-height: 32px;
@@ -315,7 +332,13 @@
         margin: 16px 0;
         font-size: 24px;
         color: #c0c0ce;
-        text-align: center; }
+        text-align: center; } }
+      @media screen and (max-width: 800px) {
+        body > section .preface:after {
+          margin: 8px 0;
+          font-size: 18px;
+          line-height: 32px; } }
+@media screen {
     body > section .part:not(:last-child):after {
       content: '§';
       text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
@@ -324,14 +347,20 @@
       margin: 16px 0;
       font-size: 24px;
       color: #c0c0ce;
-      text-align: center; }
+      text-align: center; } }
+    @media screen and (max-width: 800px) {
+      body > section .part:not(:last-child):after {
+        margin: 8px 0;
+        font-size: 18px;
+        line-height: 32px; } }
+@media screen {
     body > section#about {
       font-size: 24px;
       line-height: 32px; } }
     @media screen and (max-width: 800px) {
       body > section#about {
-        line-height: 32px;
-        font-size: 18px; } }
+        font-size: 18px;
+        line-height: 24px; } }
 @media screen {
       body > section#about strong {
         white-space: nowrap; }

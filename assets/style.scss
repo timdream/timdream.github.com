@@ -9,6 +9,11 @@ $line_height: 16px;
   margin: $line_height 0;
   font-size: $font_size * 2;
   color: #c0c0ce;
+  @media (max-width: 800px) {
+    margin: $line_height / 2 0;
+    font-size: $font_size * 1.5;
+    line-height: $line_height * 2;
+  }
 }
 
 @mixin section_sign {
@@ -221,6 +226,10 @@ $branding_background_url: './45-degree-fabric-dark.png';
 
     margin: 0 0 $line_height 0;
 
+    @media (max-width: 800px) {
+      padding-bottom: 1em;
+    }
+
     h1 {
       margin: 0 auto;
       max-width: 700px;
@@ -232,6 +241,7 @@ $branding_background_url: './45-degree-fabric-dark.png';
       @media (max-width: 800px) {
         font-size: $font_size * 2;
         line-height: $line_height * 2;
+        padding: $line_height 0.5em $line_height / 2 0.5em;
       }
     }
     #aka {
@@ -246,7 +256,7 @@ $branding_background_url: './45-degree-fabric-dark.png';
         font-size: $font_size * 1.5;
         line-height: $line_height * 2;
 
-        padding: $line_height / 2 1em;
+        padding: $line_height / 4 0.66667em;
       }
 
       font-weight: bold;
@@ -387,7 +397,7 @@ $branding_background_url: './45-degree-fabric-dark.png';
   body > section {
     margin: $line_height auto;
     max-width: 700px;
-    padding: 0 $line_height * 2;
+    padding: 0 $line_height * 1;
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.7s;
     -moz-animation-name: fadeIn;
@@ -458,8 +468,8 @@ $branding_background_url: './45-degree-fabric-dark.png';
       font-size: $font_size * 2;
       line-height: $line_height * 2;
       @media (max-width: 800px) {
-        line-height: $line_height * 2;
         font-size: $font_size * 1.5;
+        line-height: $line_height * 1.5;
       }
       strong {
         white-space: nowrap;
