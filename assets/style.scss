@@ -495,6 +495,11 @@ $branding_background_url: './45-degree-fabric-dark.png';
       line-height: $line_height * 2;
       text-align: center;
 
+      @media (max-width: 800px) {
+        line-height: $line_height * 1.5;
+        font-size: $font_size * 1.5;
+      }
+
       //@include section_sign;
 
       > ul {
