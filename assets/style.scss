@@ -36,16 +36,7 @@ $branding_background_url: './45-degree-fabric-dark.png';
   }
 }
 
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes fadeIn {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -66,30 +57,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
   }
 }
 
-@-moz-keyframes dropDown {
-  from {
-    -moz-transform: translateY(-200px);
-  }
-  90% {
-    -moz-transform: translateY($line_height * 4);
-  }
-  to {
-    -moz-transform: translateY(0);
-  }
-}
-
-@-ms-keyframes dropDown {
-  from {
-    -ms-transform: translateY(-200px);
-  }
-  90% {
-    -ms-transform: translateY($line_height * 4);
-  }
-  to {
-    -ms-transform: translateY(0);
-  }
-}
-
 @keyframes dropDown {
   from {
     transform: translateY(-200px);
@@ -103,30 +70,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
 }
 
 @-webkit-keyframes dropShow {
-  from {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes dropShow {
-  from {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-ms-keyframes dropShow {
   from {
     opacity: 0;
   }
@@ -168,9 +111,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
   a {
     text-shadow: 0 1px 0 rgba(#fff, 0.8), 0 0 1.5px #00f;
     -webkit-transition: color 0.3s, border-bottom-color .3s;
-    -moz-transition: color 0.3s, border-bottom-color .3s;
-    -o-transition: color 0.3s, border-bottom-color .3s;
-    -ms-transition: color 0.3s, border-bottom-color .3s;
     transition: color 0.3s, border-bottom-color .3s;
     text-decoration: none;
 
@@ -221,10 +161,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
 
     -webkit-animation-name: dropDown;
     -webkit-animation-duration: 0.7s;
-    -moz-animation-name: dropDown;
-    -moz-animation-duration: 0.7s;
-    -ms-animation-name: dropDown;
-    -ms-animation-duration: 0.7s;
     animation-name: dropDown;
     animation-duration: 0.7s;
 
@@ -272,10 +208,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
   nav {
     -webkit-animation-name: dropShow;
     -webkit-animation-duration: 0.7s;
-    -moz-animation-name: dropShow;
-    -moz-animation-duration: 0.7s;
-    -ms-animation-name: dropShow;
-    -ms-animation-duration: 0.7s;
 
     > ul {
       list-style: none;
@@ -314,23 +246,14 @@ $branding_background_url: './45-degree-fabric-dark.png';
     position: relative;
 
     -webkit-transition: -webkit-transform 0.5s;
-    -moz-transition: -moz-transform 0.5s;
-    -ms-transition: -ms-transform 0.5s;
-    -o-transition: -o-transform 0.5s;
     transition: transform 0.5s;
 
     -webkit-transform: translateX(32px + 60px + $line_height);
-    -moz-transform: translateX(32px + 60px + $line_height);
-    -ms-transform: translateX(32px + 60px + $line_height);
-    -o-transform: translateX(32px + 60px + $line_height);
     transform: translateX(32px + 60px + $line_height);
 
     body:not(.hide-share) &:hover {
     //&.show {
       -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
       transform: none;
       > * {
         opacity: 1;
@@ -345,9 +268,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
       position: absolute;
       opacity: 0.3;
       -webkit-transition: opacity 0.5s;
-      -moz-transition: opacity 0.5s;
-      -ms-transition: opacity 0.5s;
-      -o-transition: opacity 0.5s;
       transition: opacity 0.5s;
     }
     > #fblike {
@@ -367,9 +287,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
       margin: 0;
 
       -webkit-transform: none;
-      -moz-transform: none;
-      -ms-transform: none;
-      -o-transform: none;
       transform: none;
 
       body.hide-share & {
@@ -404,10 +321,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
     padding: 0 $line_height * 1;
     -webkit-animation-name: fadeIn;
     -webkit-animation-duration: 0.7s;
-    -moz-animation-name: fadeIn;
-    -moz-animation-duration: 0.7s;
-    -ms-animation-name: fadeIn;
-    -ms-animation-duration: 0.7s;
     animation-name: fadeIn;
     animation-duration: 0.7s;
 
@@ -484,9 +397,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
         vertical-align: middle;
 
         -webkit-transition: opacity 0.3s;
-        -moz-transition: opacity 0.3s;
-        -ms-transition: opacity 0.3s;
-        -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
 
         //&:hover {
@@ -532,9 +442,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
         line-height: $line_height * 1.5;
 
         -webkit-transition: opacity 0.3s;
-        -moz-transition: opacity 0.3s;
-        -ms-transition: opacity 0.3s;
-        -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
 
         clear: both;
@@ -665,9 +572,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
 
         > li {
           -webkit-transition: opacity 0.3s;
-          -moz-transition: opacity 0.3s;
-          -ms-transition: opacity 0.3s;
-          -o-transition: opacity 0.3s;
           transition: opacity 0.3s;
 
           list-style: none;
