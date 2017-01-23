@@ -293,27 +293,20 @@
       display: none; }
     body > section html.js {
       display: none; }
-    html.no-js body > section > header {
+    body > section header {
       font-size: 36px;
       line-height: 48px;
       font-weight: bold;
-      text-align: center; }
-    html.js body > section > header {
-      display: none; }
-    body > section > header:after {
-      content: '§';
-      text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 5px #fff;
-      display: block;
-      line-height: 32px;
-      margin: 16px 0;
-      font-size: 24px;
-      color: #c0c0ce;
-      text-align: center; } }
+      color: rgba(0, 0, 0, 0.73);
+      text-align: center;
+      padding-bottom: 16px; }
+      html.js body > section header.no-js-only {
+        display: none; } }
     @media screen and (max-width: 800px) {
-      body > section > header:after {
-        margin: 8px 0;
-        font-size: 18px;
-        line-height: 32px; } }
+      body > section header {
+        line-height: 32px;
+        font-size: 24px;
+        padding-bottom: 8px; } }
 @media screen {
     body > section .preface {
       font-size: 24px;

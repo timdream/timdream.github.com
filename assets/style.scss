@@ -423,21 +423,21 @@ $branding_background_url: './45-degree-fabric-dark.png';
     //  display: block;
     }
 
-    > header {
-      html.no-js & {
-        font-size: $font_size * 3;
-        line-height: $line_height * 3;
-        font-weight: bold;
-        text-align: center;
-      }
-      html.js & {
+    header {
+      html.js &.no-js-only {
         display: none;
       }
-      &:after {
-        content: '§';
-        @include dim;
-        text-align: center;
+      font-size: $font_size * 3;
+      line-height: $line_height * 3;
+      @media (max-width: 800px) {
+        line-height: $line_height * 2;
+        font-size: $font_size * 2;
+        padding-bottom: $line_height * 0.5;
       }
+      font-weight: bold;
+      color: rgba(#000, 0.73);
+      text-align: center;
+      padding-bottom: $line_height;
     }
 
     .preface {
