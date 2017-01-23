@@ -470,6 +470,8 @@
       line-height: 32px; } }
     @media screen and (max-width: 800px) {
       body > section#interviews-talks ul {
+        font-size: 18px;
+        line-height: 24px;
         padding: 0; }
         body > section#interviews-talks ul > li {
           list-style: none; } }
@@ -488,24 +490,15 @@
         -ms-transition: opacity 0.3s;
         -o-transition: opacity 0.3s;
         transition: opacity 0.3s;
-        padding-bottom: 8px; } }
-      @media screen and (max-width: 800px) {
-        body > section#interviews-talks ul > li {
-          list-style: none; }
-          body > section#interviews-talks ul > li:after {
-            content: '·';
-            display: block;
-            text-align: center;
-            color: #ccc; }
-          body > section#interviews-talks ul > li:last-child:after {
-            content: none; } }
-@media screen {
+        list-style: none;
+        padding-bottom: 8px; }
         body > section#interviews-talks ul > li > .title {
           font-size: 24px;
           font-weight: bold; } }
         @media screen and (max-width: 800px) {
           body > section#interviews-talks ul > li > .title {
-            font-size: 18px; } }
+            font-size: 18px;
+            line-height: 24px; } }
 @media screen {
       body > section#interviews-talks ul:hover > li:not(:hover) {
         opacity: 0.7; } }

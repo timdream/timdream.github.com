@@ -637,6 +637,9 @@ $branding_background_url: './45-degree-fabric-dark.png';
         line-height: $line_height * 2;
 
         @media (max-width: 800px) {
+          font-size: $font_size * 1.5;
+          line-height: $font_size * 2;
+
           padding: 0;
           > li {
             list-style: none;
@@ -663,24 +666,14 @@ $branding_background_url: './45-degree-fabric-dark.png';
           -o-transition: opacity 0.3s;
           transition: opacity 0.3s;
 
-          @media (max-width: 800px) {
-            list-style: none;
-            &:after {
-              content: '·';
-              display: block;
-              text-align: center;
-              color: #ccc;
-            }
-            &:last-child:after {
-              content: none;
-            }
-          }
+          list-style: none;
 
           padding-bottom: $line_height * 0.5;
           > .title {
             font-size: $font_size * 2;
             @media (max-width: 800px) {
               font-size: $font_size * 1.5;
+              line-height: $font_size * 2;
             }
             font-weight: bold;
           }
