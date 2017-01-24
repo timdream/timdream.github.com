@@ -575,10 +575,6 @@ $branding_background_url: './45-degree-fabric-dark.png';
             font-weight: bold;
           }
         }
-
-        &:hover > li:not(:hover) {
-          opacity: 0.7;
-        }
       }
     }
   }

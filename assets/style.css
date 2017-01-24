@@ -415,6 +415,3 @@
           body > section#interviews-talks ul > li > .title {
             font-size: 18px;
             line-height: 24px; } }
-@media screen {
-      body > section#interviews-talks ul:hover > li:not(:hover) {
-        opacity: 0.7; } }
