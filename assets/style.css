@@ -55,17 +55,17 @@
     margin: 16px 0; }
 
   a {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #00f;
-    -webkit-transition: color 0.3s, border-bottom-color .3s;
-    transition: color 0.3s, border-bottom-color .3s;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #00f, -2px 0 0 #f8f8f8, 2px 0 0 #f8f8f8;
+    -webkit-transition: color 0.3s, box-shadow .3s;
+    transition: color 0.3s, box-shadow .3s;
     text-decoration: none;
-    border-bottom-color: transparent; }
+    box-shadow: inset 0 -3.5px 0 #f8f8f8, inset 0 -4.5px 0 #88f; }
     a:link, a:visited {
       color: #000; }
     a:hover {
       color: #00c;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #009;
-      border-bottom: 0.1em dashed; }
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 1.5px #009, -2px 0 0 #f8f8f8, 2px 0 0 #f8f8f8;
+      box-shadow: inset 0 -3px 0 #f8f8f8, inset 0 -5px 0 #33f; }
       a:hover img {
         -webkit-box-shadow: 0 0 1.5px #009;
         box-shadow: 0 0 1.5px #009; }
@@ -403,14 +403,6 @@
         body > section#interviews-talks ul > li {
           list-style: none; } }
 @media screen {
-      body > section#interviews-talks ul a {
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
-        body > section#interviews-talks ul a:link, body > section#interviews-talks ul a:visited {
-          color: #006; }
-        body > section#interviews-talks ul a:hover {
-          color: #00c; }
-        body > section#interviews-talks ul a:active {
-          color: #33f; }
       body > section#interviews-talks ul > li {
         -webkit-transition: opacity 0.3s;
         transition: opacity 0.3s;
