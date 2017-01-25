@@ -19,6 +19,9 @@
     if (hash) {
       window.location.replace(hash);
     }
+    if (!elToShow) {
+      elToShow = document.getElementById('about');
+    }
     elToShow.hidden = false;
   }
   handleHash();
