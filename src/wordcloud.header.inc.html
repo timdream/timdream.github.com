@@ -1,0 +1,65 @@
+<script src="https://timdream.org/wordcloud2.js/src/wordcloud2.js" defer></script>
+<script>
+
+var list = (function generateLoveList() {
+  var nums = [5, 4, 3, 2, 2];
+  // This list of the word "Love" in language of the world was taken from
+  // the Language links of entry "Love" in English Wikipedia, with duplicate
+  // spelling removed.
+  var words = ('Liebe,ፍቅር,Lufu,حب,Aimor,Amor,Heyran,ভালোবাসা,Каханне,Любоў,Любов,བརྩེ་དུང་།,' +
+    'Ljubav,Karantez,Юрату,Láska,Amore,Cariad,Kærlighed,Armastus,Αγάπη,Amo,Amol,Maitasun,' +
+    'عشق,Pyar,Amour,Leafde,Gràdh,愛,爱,પ્રેમ,사랑,Սեր,Ihunanya,Cinta,ᑕᑯᑦᓱᒍᓱᑉᐳᖅ,Ást,אהבה,' +
+    'ಪ್ರೀತಿ,სიყვარული,Махаббат,Pendo,Сүйүү,Mīlestība,Meilė,Leefde,Bolingo,Szerelem,' +
+    'Љубов,സ്നേഹം,Imħabba,प्रेम,Ái,Хайр,အချစ်,Tlazohtiliztli,Liefde,माया,मतिना,' +
+    'Kjærlighet,Kjærleik,ପ୍ରେମ,Sevgi,ਪਿਆਰ,پیار,Miłość,Leevde,Dragoste,' +
+    'Khuyay,Любовь,Таптал,Dashuria,Amuri,ආදරය,Ljubezen,Jaceyl,خۆشەویستی,Љубав,Rakkaus,' +
+    'Kärlek,Pag-ibig,காதல்,ప్రేమ,ความรัก,Ишқ,Aşk,محبت,Tình yêu,Higugma,ליבע').split(',');
+
+  return [['Love', 12]]
+    .concat(nums.reduce(function(arr, n) {
+      return arr
+        .concat(words
+            .map((function(w) { return [w, n]; })));
+    }, []));
+})();
+
+function draw() {
+  (window.requestAnimationFrame || window.setTimeout)(function() {
+    var canvasEl = document.getElementById('wordcloud-canvas');
+    var width = 1280;
+
+    var options = {
+      gridSize: Math.round(16 * width / 1024),
+      weightFactor: function (size) {
+        return Math.pow(size, 2.3) * width / 1024;
+      },
+      fontFamily: 'Times, serif',
+      color: function (word, weight) {
+        return (weight === 12) ? '#f02222' : '#c09292';
+      },
+      rotateRatio: 0.5,
+      rotationSteps: 2,
+      backgroundColor: '#fff0f0',
+      list: list
+    };
+
+    if (typeof WordCloud === 'function' && WordCloud.isSupported) {
+      WordCloud(canvasEl, options);
+    } else {
+      document.getElementById('wordcloud-canvas-container').hidden = true;
+      document.getElementById('wordcloud-fallback-container').hidden = false;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  draw();
+
+  document.getElementById('reload-link')
+    .addEventListener('click', function(evt) {
+      evt.preventDefault();
+      draw();
+    });
+}, { once: true });
+
+</script>

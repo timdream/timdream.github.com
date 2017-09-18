@@ -1,0 +1,49 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+body {
+  font-family: Georgia, serif;
+  color: rgba(0, 0, 0, 0.95);
+  background: #f8f8f8 url("/assets/little-pluses.png");
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+header.main > *,
+header.main > * > *, /* Chrome bug? */
+body > section,
+body > hr,
+body > footer {
+  opacity: 0;
+}
+
+section, footer {
+  padding: 24px 6px;
+}
+
+header {
+  font-family: Merriweather, Bookman Old Style, Times, serif;
+  background: url("/assets/45-degree-fabric-dark.png") #275cb6;
+  box-shadow: 0 0 5px #000;
+}
+
+header h1 {
+  color: unset;
+  padding: 0;
+}
+
+h1 {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+section, footer, h1 {
+  max-width: 680px;
+  margin: 0 auto;
+}

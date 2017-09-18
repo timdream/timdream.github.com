@@ -1,0 +1,20 @@
+{
+  "name": "timdream.org",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timdream/timdream.github.com.git"
+  },
+  "author": "Tim Guan-tin Chien",
+  "license": "All rights reserved.",
+  "bugs": {
+    "url": "https://github.com/timdream/timdream.github.com/issues"
+  },
+  "homepage": "https://github.com/timdream/timdream.github.com#readme",
+  "devDependencies": {
+    "uglify-es": "^3.1.1",
+    "uglifycss": "0.0.27"
+  }
+}

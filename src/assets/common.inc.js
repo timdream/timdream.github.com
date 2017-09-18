@@ -1,5 +1,3 @@
-'use strict';
-
 document.documentElement.classList.remove('no-js');
 
 if (window.location.hostname === 'timdream.org' &&
@@ -69,8 +67,3 @@ ServiceWorkerController.prototype = {
 
 window.swController = new ServiceWorkerController();
 window.swController.start();
-
-window.addEventListener('pagehide', function() {
-  document.body.classList.add('pagehide') });
-window.addEventListener('pageshow', function() {
-  document.body.classList.remove('pagehide') });
