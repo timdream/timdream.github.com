@@ -9,8 +9,7 @@ PAGE_NAMES = firefox \
 
 FILES = $(PAGE_FILES) \
 	$(SERVICE_WORKER_ENTRY) \
-	$(HASH_REQUEST_FILES) \
-	$(RESOURCE_FILES)
+	$(HASH_REQUEST_FILES)
 
 SERVICE_WORKER_ENTRY = service-worker.min.js
 
@@ -28,27 +27,31 @@ HASH_REQUEST_FILES = assets/cv.min.js \
 	cv/steps.json.aes \
 	cv/timdream-private.pdf.aes \
 	cv/timdream.pdf \
-	assets/reading-signpost-in-paris.jpg
+	assets/reading-signpost-in-paris.jpg \
+	assets/tiramisu-icon-64-shadow.png \
+	$(FIRSTPAINT_STYLESHEET_FILES) \
+	$(LOGO_FILES) \
+	$(PORTFOLIO_IMAGE_FILES)
 
-RESOURCE_FILES = favicon.ico \
-	assets/45-degree-fabric-dark.png \
-	assets/little-pluses.png \
-	assets/academia-sinica.png \
-	assets/demolab-screenshot.png \
+FIRSTPAINT_STYLESHEET_FILES = assets/45-degree-fabric-dark.png \
+	assets/little-pluses.png
+
+LOGO_FILES = assets/academia-sinica.png \
 	assets/demolab.png \
-	assets/firefox-os-commit.svg \
-	assets/firefox-os-keyboard.png \
 	assets/firefox-os.png \
 	assets/firefox.png \
-	assets/jszhuyin-learn.gif \
 	assets/jszhuyin.png \
-	assets/moztw-gfx-tw-tim.png \
-	assets/moztw-ie8.png \
 	assets/moztw.png \
 	assets/owl-publishing.svg \
-	assets/tiramisu-icon-64-shadow.png \
-	assets/wordcloud-example-noscript.png \
 	assets/wordcloud.png
+
+PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.png \
+	assets/firefox-os-commit.svg \
+	assets/firefox-os-keyboard.png \
+	assets/jszhuyin-learn.gif \
+	assets/moztw-gfx-tw-tim.png \
+	assets/moztw-ie8.png \
+	assets/wordcloud-example-noscript.png
 
 INTERMEDIATE_FILES = assets/cv.js \
 	assets/cv.css \
@@ -73,26 +76,31 @@ portfolio/$(1)/index.html: Makefile \
 		src/page.tmpl.html \
 		src/footer.inc.html \
 		assets/script.min.js \
-		assets/style.min.css
+		assets/style.min.css \
+		$(FIRSTPAINT_STYLESHEET_FILES) \
+		$(LOGO_FILES) \
+		$(PORTFOLIO_IMAGE_FILES)
 	mkdir -p portfolio/$(1) &&\
-	cat src/page.tmpl.html |\
-		$(call LINE_REPLACER_COMMAND,src/footer.inc.html) |\
-		$(call LINE_REPLACER_COMMAND,src/page.inc.css) |\
-		$(call TEMPLATE_REPLACER_COMMAND,CONTENT,%$(1).inc.html%) |\
-		$(call LINE_REPLACER_COMMAND,src/$(1).inc.html) |\
-		$(call PAGE_EXTRA_COMMAND,$(1)) |\
-		$(call LINE_REPLACER_COMMAND,src/firstpaint.inc.css) |\
-		$(call TEMPLATE_REPLACER_COMMAND,PORTFOLIOTOTLE,%$(1).title.inc.html%) |\
-		$(call LINE_REPLACER_COMMAND,src/$(1).title.inc.html) |\
-		$(call HASH_REPLACER_COMMAND,assets/script.min.js) |\
-		$(call HASH_REPLACER_COMMAND,assets/style.min.css) \
+	cat src/page.tmpl.html \
+		| $(call LINE_REPLACER_COMMAND,src/footer.inc.html) \
+		| $(call LINE_REPLACER_COMMAND,src/page.inc.css) \
+		| $(call TEMPLATE_REPLACER_COMMAND,CONTENT,%$(1).inc.html%) \
+		| $(call LINE_REPLACER_COMMAND,src/$(1).inc.html) \
+		| $(call PAGE_EXTRA_COMMAND,$(1)) \
+		| $(call LINE_REPLACER_COMMAND,src/firstpaint.inc.css) \
+		$(foreach NAME,$(LOGO_FILES) $(PORTFOLIO_IMAGE_FILES) $(FIRSTPAINT_STYLESHEET_FILES),\
+			| $(call HASH_REPLACER_COMMAND,$(NAME))) \
+		| $(call TEMPLATE_REPLACER_COMMAND,PORTFOLIOTOTLE,%$(1).title.inc.html%) \
+		| $(call LINE_REPLACER_COMMAND,src/$(1).title.inc.html) \
+		| $(call HASH_REPLACER_COMMAND,assets/script.min.js) \
+		| $(call HASH_REPLACER_COMMAND,assets/style.min.css) \
 		> portfolio/$(1)/index.html
 endef
 
 TEMPLATE_REPLACER_COMMAND = sed "s'%$(1)%'$(2)'"
 VAR_REPLACER_COMMAND = sed s/%$(notdir $(1))%/`cat $(1)`/
 LINE_REPLACER_COMMAND = sed -e '/%$(notdir $(1))%/ {' -e 'r $(1)' -e 'd' -e '}'
-HASH_REPLACER_COMMAND = sed s/%hash-$(notdir $(1))%/`md5 -q $(1) | cut -b 1-6`/
+HASH_REPLACER_COMMAND = sed -E "s:$(1)(\?\_\=%hash-$(notdir $(1))%)?:$(1)?_=`md5 -q $(1) | cut -b 1-6`:"
 
 .PHONY: all
 all: $(FILES)
@@ -104,14 +112,16 @@ index.html: Makefile \
 						src/footer.inc.html \
 						assets/script.min.js \
 						assets/style.min.css \
+						$(FIRSTPAINT_STYLESHEET_FILES) \
 						assets/reading-signpost-in-paris.jpg
-	cat src/index.tmpl.html |\
-		$(call LINE_REPLACER_COMMAND,src/firstpaint.inc.css) |\
-		$(call LINE_REPLACER_COMMAND,src/index.inc.css) |\
-		$(call LINE_REPLACER_COMMAND,src/footer.inc.html) |\
-		$(call HASH_REPLACER_COMMAND,assets/script.min.js) |\
-		$(call HASH_REPLACER_COMMAND,assets/style.min.css) |\
-		$(call HASH_REPLACER_COMMAND,assets/reading-signpost-in-paris.jpg) \
+	cat src/index.tmpl.html \
+		| $(call LINE_REPLACER_COMMAND,src/firstpaint.inc.css) \
+		$(foreach NAME,$(FIRSTPAINT_STYLESHEET_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
+		| $(call LINE_REPLACER_COMMAND,src/index.inc.css) \
+		| $(call LINE_REPLACER_COMMAND,src/footer.inc.html) \
+		| $(call HASH_REPLACER_COMMAND,assets/script.min.js) \
+		| $(call HASH_REPLACER_COMMAND,assets/style.min.css) \
+		| $(call HASH_REPLACER_COMMAND,assets/reading-signpost-in-paris.jpg) \
 		> index.html
 
 cv/index.html: src/cv.tmpl.html \
@@ -165,9 +175,13 @@ assets/script.js: Makefile \
 		> assets/script.js
 
 assets/style.css: Makefile \
+									$(LOGO_FILES) \
+									assets/tiramisu-icon-64-shadow.png \
 									src/assets/style.tmpl.css
 	cat src/assets/style.tmpl.css \
-		> assets/style.css
+		| $(call HASH_REPLACER_COMMAND,assets/tiramisu-icon-64-shadow.png) \
+		$(foreach NAME, $(LOGO_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
+		> $@
 
 assets/asmcrypto-decipher.js: Makefile \
 															src/assets/asmcrypto-decipher.tmpl.js \

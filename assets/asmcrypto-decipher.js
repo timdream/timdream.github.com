@@ -1,6 +1,6 @@
 'use strict';
 
-self.importScripts('./asmcrypto.js?_=fa9483');
+self.importScripts('/assets/asmcrypto.js?_=fa9483');
 
 function getKey(password) {
   var key = asmCrypto.PBKDF2_HMAC_SHA256.bytes(

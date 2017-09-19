@@ -225,7 +225,7 @@ CVDecipher.prototype = {
       worker = this.worker = new Worker('/assets/webcrypto-decipher.min.js?_=ae158a');
       this.decipherName = 'Web Crypto Decipher';
     } else {
-      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=1c2571');
+      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=189c07');
       this.decipherName = 'asmCrypto Decipher';
     }
     worker.postMessage({ password: password });
