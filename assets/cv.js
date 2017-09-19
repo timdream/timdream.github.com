@@ -18,39 +18,39 @@ if (window.location.hostname === 'timdream.org' &&
 function ServiceWorkerController() {
 }
 ServiceWorkerController.prototype = {
-  state: 'notstarted',
   start: function() {
     if (! ('serviceWorker' in navigator)) {
       this.state = 'notsupported';
       return;
     }
 
-    this.install();
+    this.check()
+      .then(function() {
+        if (!this.swReg || (!this.swReg.installing &&
+                            !this.swReg.waiting &&
+                            !this.swReg.active)) {
+          return this.install();
+        } else if (this.swReg.active) {
+          // Update will fail on offline; disregard.
+          return this.swReg.update();
+        }
+      }.bind(this))
+      .catch(function(error) {
+        console.log(error);
+      }.bind(this));
+  },
+  check: function() {
+    return navigator.serviceWorker
+      .getRegistration('/')
+      .then(function(swReg) {
+        this.swReg = swReg;
+      }.bind(this));
   },
   install: function() {
-    this.state = 'installing';
-
-    navigator.serviceWorker
+    return navigator.serviceWorker
       .register('/service-worker.min.js', {scope: '/'})
       .then(function(swReg) {
         this.swReg = swReg;
-        if (swReg.active) {
-          this.state = 'installed';
-          return;
-        }
-        var worker = swReg.installing;
-        worker.addEventListener('statechange', function() {
-          if (worker.state == 'redundant') {
-            this.state = 'uninstalled';
-          }
-          if (worker.state == 'installed') {
-            this.state = 'installed';
-          }
-        }.bind(this));
-      }.bind(this))
-      .catch(function(error) {
-        console.error(error);
-        this.state = 'uninstalled';
       }.bind(this));
   },
   remove: function() {
