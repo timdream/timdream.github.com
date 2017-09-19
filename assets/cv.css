@@ -51,6 +51,50 @@ h2, h3 {
     visibility: visible;
   }
 
+  html.updating article::before {
+    visibility: visible;
+    opacity: 0.5;
+  }
+
+  article::before {
+    display: block;
+    position: absolute;
+    content: "Downloading updates…";
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-repeat: repeat-x;
+    background-size: 40px 40px;
+    background-image: linear-gradient(-45deg, #ffffff 25%, #ffcc80 25%, #ffcc80 50%, #ffffff 50%, #ffffff 75%, #ffcc80 75%, #ffcc80);
+    animation: progress-bar-stripes 1s linear infinite;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-shadow: none;
+    text-transform: uppercase;
+    font-family: Helvetica Neue, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #333;
+  }
+
+  html.index article::before {
+    transform: translateY(30px);
+  }
+
+  html.page article::before {
+    transform: translateY(15px);
+  }
+
+  @keyframes progress-bar-stripes {
+    from { background-position: 0 0 }
+    to { background-position: 40px 0 }
+  }
+
   article > :not(#unlock-form) {
     transition: opacity 0.2s ease-in-out;
   }

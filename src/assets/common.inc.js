@@ -33,6 +33,10 @@ ServiceWorkerController.prototype = {
           return this.swReg.update();
         }
       }.bind(this))
+      .then(function() {
+        this.swReg.addEventListener('updatefound', this);
+        this.showUpdateProgress();
+      }.bind(this))
       .catch(function(error) {
         console.log(error);
       }.bind(this));
@@ -62,6 +66,33 @@ ServiceWorkerController.prototype = {
           this.state = 'installed';
         }
       }.bind(this));
+  },
+  showUpdateProgress: function() {
+    // No UI to show if there isn't anything being installed,
+    // or if this page is newly installed or bypasses service worker.
+    if (!this.swReg.installing ||
+        !navigator.serviceWorker.controller) {
+      return;
+    }
+    document.documentElement.classList.add('updating');
+    this.swReg.installing.addEventListener('statechange', this);
+  },
+  handleEvent: function(evt) {
+    switch (evt.type) {
+      case 'updatefound':
+        this.showUpdateProgress();
+        break;
+      case 'statechange':
+        evt.target.removeEventListener('statechange', this);
+        if (evt.target.state === 'redundant') {
+          // Install failed, hide UI and exit.
+          document.documentElement.classList.remove('updating');
+          return;
+        }
+        // page is not current, should reload
+        window.location.reload();
+        break;
+    }
   }
 };
 
