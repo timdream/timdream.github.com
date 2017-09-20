@@ -140,16 +140,12 @@ cv/index.html: src/cv.tmpl.html \
 service-worker.js: Makefile \
 	   							 src/service-worker.tmpl.js \
 	   							 $(PAGE_FILES) \
-	   							 $(HASH_REQUEST_FILES) \
-	   							 $(RESOURCE_FILES)
+	   							 $(HASH_REQUEST_FILES)
 	cat	src/service-worker.tmpl.js |\
-	  $(call TEMPLATE_REPLACER_COMMAND,ALLHASHES,`cat $(PAGE_FILES) \
-			$(HASH_REQUEST_FILES) \
-			$(RESOURCE_FILES) | md5 -q`) |\
-		$(call TEMPLATE_REPLACER_COMMAND,FILELIST,$(dir $(PAGE_FILES)) \
-		  $(foreach NAME,$(HASH_REQUEST_FILES),$(NAME)?_=$(shell md5 -q $(NAME) | cut -b 1-6)) \
-		  $(RESOURCE_FILES)) \
-		> service-worker.js
+	  $(call TEMPLATE_REPLACER_COMMAND,ALLHASHES,`cat $(sort $(PAGE_FILES) $(HASH_REQUEST_FILES)) | md5 -q`) |\
+		$(call TEMPLATE_REPLACER_COMMAND,FILELIST,$(sort $(dir $(PAGE_FILES)) \
+		  $(foreach NAME,$(HASH_REQUEST_FILES),$(NAME)?_=$(shell md5 -q $(NAME) | cut -b 1-6)))) \
+		> $@
 
 assets/cv.js: Makefile \
 							src/assets/cv.tmpl.js \
