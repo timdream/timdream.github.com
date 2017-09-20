@@ -1,3 +1,5 @@
+
+# Name of the portfolio pages to generate.
 PAGE_NAMES = firefox \
 	firefox-os \
 	owl-publishing \
@@ -7,35 +9,44 @@ PAGE_NAMES = firefox \
 	wordcloud \
 	jszhuyin
 
-FILES = $(PAGE_FILES) \
+# Generated files
+DEST_FILES = $(PAGE_FILES) \
 	$(SERVICE_WORKER_ENTRY) \
-	$(HASH_REQUEST_FILES)
+	$(HASH_REQUEST_DEST_FILES)
 
+# Service worker entry point
 SERVICE_WORKER_ENTRY = service-worker.min.js
 
+# All HTML pages generated
 PAGE_FILES = index.html \
 	$(foreach NAME,$(PAGE_NAMES),portfolio/$(NAME)/index.html) \
 	cv/index.html
 
-HASH_REQUEST_FILES = assets/cv.min.js \
-	assets/cv.min.css \
-	assets/script.min.js \
-	assets/style.min.css \
-	assets/asmcrypto.js \
-	assets/asmcrypto-decipher.min.js \
-	assets/webcrypto-decipher.min.js \
-	cv/steps.json.aes \
-	cv/timdream-private.pdf.aes \
-	cv/timdream.pdf \
+# All files to be accessed online with a ?_=hash URL.
+HASH_REQUEST_FILES = cv/timdream.pdf \
 	assets/reading-signpost-in-paris.jpg \
 	assets/tiramisu-icon-64-shadow.png \
+	assets/asmcrypto.js \
+	$(HASH_REQUEST_DEST_FILES) \
 	$(FIRSTPAINT_STYLESHEET_FILES) \
 	$(LOGO_FILES) \
 	$(PORTFOLIO_IMAGE_FILES)
 
+# All generated files to be accessed online with a ?_=hash URL.
+HASH_REQUEST_DEST_FILES = assets/cv.min.js \
+	assets/cv.min.css \
+	assets/script.min.js \
+	assets/style.min.css \
+	assets/asmcrypto-decipher.min.js \
+	assets/webcrypto-decipher.min.js \
+	cv/steps.json.aes \
+	cv/timdream-private.pdf.aes
+
+# Files referenced in the firstpaint stylesheets.
 FIRSTPAINT_STYLESHEET_FILES = assets/45-degree-fabric-dark.png \
 	assets/little-pluses.png
 
+# Files refreneced in HTML of the page files *and* style.css
 LOGO_FILES = assets/academia-sinica.png \
 	assets/demolab.png \
 	assets/firefox-os.png \
@@ -45,6 +56,7 @@ LOGO_FILES = assets/academia-sinica.png \
 	assets/owl-publishing.svg \
 	assets/wordcloud.png
 
+# Fils referenced in HTML of the page files.
 PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.png \
 	assets/firefox-os-commit.svg \
 	assets/firefox-os-keyboard.png \
@@ -53,6 +65,7 @@ PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.png \
 	assets/moztw-ie8.png \
 	assets/wordcloud-example-noscript.png
 
+# Intermediate files generated
 INTERMEDIATE_FILES = assets/cv.js \
 	assets/cv.css \
 	assets/script.js \
@@ -103,7 +116,7 @@ LINE_REPLACER_COMMAND = sed -e '/%$(notdir $(1))%/ {' -e 'r $(1)' -e 'd' -e '}'
 HASH_REPLACER_COMMAND = sed -E "s:$(1)(\?\_\=%hash-$(notdir $(1))%)?:$(1)?_=`md5 -q $(1) | cut -b 1-6`:"
 
 .PHONY: all
-all: $(FILES)
+all: $(DEST_FILES)
 
 index.html: Makefile \
 						src/index.tmpl.html \
@@ -251,7 +264,7 @@ $(foreach NAME,$(PAGE_NAMES),$(eval $(call PAGE_RULE,$(NAME))))
 
 .PHONY: clean
 clean:
-	rm $(FILES) \
+	rm -f $(DEST_FILES) \
 		$(INTERMEDIATE_FILES)
 
 .PHONY: watch
