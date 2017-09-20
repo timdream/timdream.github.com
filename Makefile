@@ -48,10 +48,10 @@ FIRSTPAINT_STYLESHEET_FILES = assets/45-degree-fabric-dark.png \
 
 # Files refreneced in HTML of the page files *and* style.css
 LOGO_FILES = assets/academia-sinica.png \
-	assets/demolab.png \
+	assets/demolab.svg \
 	assets/firefox-os.png \
 	assets/firefox.png \
-	assets/jszhuyin.png \
+	assets/jszhuyin.svg \
 	assets/moztw.png \
 	assets/owl-publishing.svg \
 	assets/wordcloud.png

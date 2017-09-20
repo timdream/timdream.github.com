@@ -2,12 +2,12 @@
 
 // This version cache will trigger the browser to
 // install the new service worker.
-/*! Hash: 0f6d75d6b921f79d68a22229d2033127 */
+/*! Hash: 164c9d2f7e8bce116a2e367e02cdb77a */
 
 const cacheKey = 'profile';
 
 // List of paths with correct hashes (if the request needs it)
-const fileList = './ assets/45-degree-fabric-dark.png?_=fe52ed assets/academia-sinica.png?_=4d222c assets/asmcrypto-decipher.min.js?_=189c07 assets/asmcrypto.js?_=fa9483 assets/cv.min.css?_=cc4e66 assets/cv.min.js?_=796346 assets/demolab-screenshot.png?_=2aec01 assets/demolab.png?_=3050be assets/firefox-os-commit.svg?_=e8327a assets/firefox-os-keyboard.png?_=a4f28a assets/firefox-os.png?_=778a01 assets/firefox.png?_=2c33a2 assets/jszhuyin-learn.gif?_=d56f91 assets/jszhuyin.png?_=a98ab1 assets/little-pluses.png?_=3ab494 assets/moztw-gfx-tw-tim.png?_=e60b64 assets/moztw-ie8.png?_=f5ad85 assets/moztw.png?_=53d1f2 assets/owl-publishing.svg?_=0b2621 assets/reading-signpost-in-paris.jpg?_=48e24c assets/script.min.js?_=53446b assets/style.min.css?_=485305 assets/tiramisu-icon-64-shadow.png?_=3d869c assets/webcrypto-decipher.min.js?_=ae158a assets/wordcloud-example-noscript.png?_=eac4ac assets/wordcloud.png?_=9e170b cv/ cv/steps.json.aes?_=08f817 cv/timdream-private.pdf.aes?_=193374 cv/timdream.pdf?_=3e8aff portfolio/academia-sinica/ portfolio/demolab/ portfolio/firefox-os/ portfolio/firefox/ portfolio/jszhuyin/ portfolio/moztw/ portfolio/owl-publishing/ portfolio/wordcloud/'
+const fileList = './ assets/45-degree-fabric-dark.png?_=fe52ed assets/academia-sinica.png?_=2a725e assets/asmcrypto-decipher.min.js?_=189c07 assets/asmcrypto.js?_=fa9483 assets/cv.min.css?_=cc4e66 assets/cv.min.js?_=796346 assets/demolab-screenshot.png?_=2aec01 assets/demolab.svg?_=37fe72 assets/firefox-os-commit.svg?_=e8327a assets/firefox-os-keyboard.png?_=a4f28a assets/firefox-os.png?_=907a94 assets/firefox.png?_=aa3132 assets/jszhuyin-learn.gif?_=d56f91 assets/jszhuyin.svg?_=bacbe1 assets/little-pluses.png?_=3ab494 assets/moztw-gfx-tw-tim.png?_=e60b64 assets/moztw-ie8.png?_=f5ad85 assets/moztw.png?_=53d1f2 assets/owl-publishing.svg?_=0b2621 assets/reading-signpost-in-paris.jpg?_=48e24c assets/script.min.js?_=53446b assets/style.min.css?_=324adb assets/tiramisu-icon-64-shadow.png?_=3d869c assets/webcrypto-decipher.min.js?_=ae158a assets/wordcloud-example-noscript.png?_=eac4ac assets/wordcloud.png?_=9e170b cv/ cv/steps.json.aes?_=08f817 cv/timdream-private.pdf.aes?_=193374 cv/timdream.pdf?_=3e8aff portfolio/academia-sinica/ portfolio/demolab/ portfolio/firefox-os/ portfolio/firefox/ portfolio/jszhuyin/ portfolio/moztw/ portfolio/owl-publishing/ portfolio/wordcloud/'
   .split(' ').map(relativeURL => (new URL(relativeURL, self.location)).href);
 
 // Install our resources into the cache.
