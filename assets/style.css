@@ -340,7 +340,7 @@ html.index .pic {
 }
 
 .list-item.academia-sinica > .icon {
-  background-image: url("/assets/academia-sinica.png?_=2a725e");
+  background-image: url("/assets/academia-sinica.svg?_=38ca46");
 }
 .list-item.academia-sinica {
   background: linear-gradient(310deg, rgb(19, 131, 188) 1%, rgb(13, 100, 158) 17%, rgb(38, 137, 190) 27%, rgb(169, 194, 218) 35%, rgb(227, 227, 204) 44%, rgb(255, 255, 255) 57%, rgb(232, 233, 212) 72%, rgb(169, 194, 218) 81%, rgb(19, 131, 188) 88%);
@@ -361,7 +361,7 @@ html.index .pic {
 }
 
 .list-item.wordcloud > .icon {
-  background-image: url("/assets/wordcloud.png?_=9e170b");
+  background-image: url("/assets/wordcloud.svg?_=fd516a");
 }
 .list-item.wordcloud {
   background: linear-gradient(90deg, #e8ebec 0, #f0f0f0 10%, #b4bcbf 100%);
