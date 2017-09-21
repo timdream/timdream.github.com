@@ -333,7 +333,7 @@ html.index .pic {
 }
 
 .list-item.owl-publishing > .icon {
-  background-image: url("/assets/owl-publishing.svg?_=0b2621");
+  background-image: url("/assets/owl-publishing.svg?_=eb546e");
 }
 .list-item.owl-publishing {
   background: linear-gradient(160deg, rgb(193, 231, 212) 0, rgb(232,255,240) 20%, rgb(232,255,240) 60%, rgb(1, 157,79) 100%)
@@ -354,7 +354,7 @@ html.index .pic {
 }
 
 .list-item.demolab > .icon {
-  background-image: url("/assets/demolab.svg?_=37fe72");
+  background-image: url("/assets/demolab.svg?_=3487c4");
 }
 .list-item.demolab {
   background: radial-gradient(circle at -25% -100%, rgb(11, 69, 151) 0%, rgb(23, 64, 143) 24%, rgb(252, 227, 51) 28%, rgb(252, 227, 51) 93%, rgb(217, 10, 43) 96%)
@@ -368,7 +368,7 @@ html.index .pic {
 }
 
 .list-item.jszhuyin > .icon {
-  background-image: url("/assets/jszhuyin.svg?_=bacbe1");
+  background-image: url("/assets/jszhuyin.svg?_=9caf29");
 }
 .list-item.jszhuyin {
   background: #f7df1e;
