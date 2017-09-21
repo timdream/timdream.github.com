@@ -297,7 +297,7 @@ html.index .pic {
 }
 
 .list-item:hover > .background {
-  transition: opacity .1s ease-in-out;
+  transition: opacity .05s ease-in-out;
   opacity: .3;
 }
 
