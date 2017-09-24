@@ -270,3 +270,9 @@ clean:
 .PHONY: watch
 watch:
 	fswatch -o . | xargs -n1 -I{} time make -j4
+
+.PHONY: finalsize
+finalsize:
+	du -csh $(sort $(PAGE_FILES) \
+		$(SERVICE_WORKER_ENTRY) \
+		$(HASH_REQUEST_FILES))
