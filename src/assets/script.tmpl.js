@@ -33,6 +33,7 @@ PicMotion.prototype = {
     areaEl.addEventListener('touchstart', this);
     areaEl.addEventListener('touchmove', this);
     areaEl.addEventListener('touchend', this);
+    areaEl.addEventListener('touchcancel', this);
     areaEl.addEventListener('mousemove', this);
     areaEl.addEventListener('mouseleave', this);
     areaEl.classList.add('motion');
@@ -66,6 +67,7 @@ PicMotion.prototype = {
         break;
       case 'mouseleave':
       case 'touchend':
+      case 'touchcancel':
         this.updateAngle(function() {
           this.areaEl.classList.remove('active');
           this.foregroundEl.style.transform = '';
