@@ -8,19 +8,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!--
-  Hi! You must be really like my website to check out the source code! Thank you.
 
-  The site is hosted on GitHub, so it’s probably easier to check it out there: https://github.com/timdream/timdream.github.com
+  Hi! You must be really like my website to check out the source code!
+  Thank you.
 
-  Every piece of code you see was hand-crafted and built with various shell commands in a Makefile.
+  The site is hosted on GitHub, so it’s probably easier to check it out there:
+  https://github.com/timdream/timdream.github.com
 
-  A few Web APIs used are worthy of mentioning:
+  Every piece of code you see was hand-crafted and built with various shell
+  commands in a Makefile.
 
-  - Service Worker, for offline caching and speed up everything after the first load.
-  - Web Cryptography API, for decrypting my private contact information on the CV. asmCrypto is used in place when it’s not there.
-  - CSS Font Loading API should avoid flashing of text when it functions properly.
+  Assuming you have not noticed everything, here is a small feature list:
 
-  Enjoy.
+  * This website is responsive and should work on your phone.
+  * Touch or move your mouse cursor over the picture for some fun.
+  * The site is offline-ready with the help from Service Worker.
+    Versioning is made atomic and page updates with a AppCache-like flow.
+  * Download my CV with contact information by decrypting the information with
+    Web Cryptography API or asmCrypto when it’s not there.
+  * Page transitions.
+  * If the CSS Font Loading API works peroperly on your browser, you should not
+    flash of text if the webfont has not been loaded.
+
+  Enjoy. Feel free to reach out!
+
   -->
 
   <meta name="author" content="Timothy Guan-tin Chien">
