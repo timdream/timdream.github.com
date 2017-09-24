@@ -27,6 +27,8 @@ HASH_REQUEST_FILES = cv/timdream.pdf \
 	assets/reading-signpost-in-paris.jpg \
 	assets/tiramisu-icon-64-shadow.png \
 	assets/asmcrypto.js \
+	assets/reading-signpost-in-paris-foreground.png \
+	assets/reading-signpost-in-paris-scene.jpg \
 	$(HASH_REQUEST_DEST_FILES) \
 	$(FIRSTPAINT_STYLESHEET_FILES) \
 	$(LOGO_FILES) \
@@ -178,9 +180,13 @@ assets/cv.css: Makefile \
 
 assets/script.js: Makefile \
 									src/assets/script.tmpl.js \
-									src/assets/common.inc.js
-	cat src/assets/script.tmpl.js |\
-		$(call LINE_REPLACER_COMMAND,src/assets/common.inc.js) \
+									src/assets/common.inc.js \
+									assets/reading-signpost-in-paris-foreground.png \
+									assets/reading-signpost-in-paris-scene.jpg
+	cat src/assets/script.tmpl.js \
+		| $(call LINE_REPLACER_COMMAND,src/assets/common.inc.js) \
+		| $(call HASH_REPLACER_COMMAND,assets/reading-signpost-in-paris-foreground.png) \
+		| $(call HASH_REPLACER_COMMAND,assets/reading-signpost-in-paris-scene.jpg) \
 		> assets/script.js
 
 assets/style.css: Makefile \
