@@ -125,7 +125,7 @@ PicMotion.prototype = {
 
     var sceneEl = this.sceneEl = document.createElement('img');
     sceneEl.className = 'pic-scene';
-    sceneEl.src = '/assets/reading-signpost-in-paris-scene.jpg?_=2a94d6';
+    sceneEl.src = '/assets/reading-signpost-in-paris-scene.jpg?_=39d0e9';
 
     areaEl.insertBefore(foregroundEl, areaEl.firstChild);
     areaEl.insertBefore(sceneEl, areaEl.firstChild);
