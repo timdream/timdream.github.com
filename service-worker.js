@@ -2,7 +2,7 @@
 
 // This version cache will trigger the browser to
 // install the new service worker.
-/*! Hash: d9163b27a3ea8ad2e18eeef5454f1536 */
+/*! Hash: d5cbb710c98bfc85b601321a01d011db */
 
 const cacheKey = 'profile';
 
