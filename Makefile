@@ -59,13 +59,13 @@ LOGO_FILES = assets/academia-sinica.svg \
 	assets/wordcloud.svg
 
 # Fils referenced in HTML of the page files.
-PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.png \
+PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/firefox-os-commit.svg \
 	assets/firefox-os-keyboard.png \
 	assets/jszhuyin-learn.gif \
-	assets/moztw-gfx-tw-tim.png \
-	assets/moztw-ie8.png \
-	assets/wordcloud-example-noscript.png
+	assets/moztw-gfx-tw-tim.jpg \
+	assets/moztw-ie8.jpg \
+	assets/wordcloud-example-noscript.jpg
 
 # Intermediate files generated
 INTERMEDIATE_FILES = assets/cv.js \

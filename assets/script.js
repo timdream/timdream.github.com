@@ -121,7 +121,7 @@ PicMotion.prototype = {
 
     var foregroundEl = this.foregroundEl = document.createElement('img');
     foregroundEl.className = 'pic-foreground';
-    foregroundEl.src = '/assets/reading-signpost-in-paris-foreground.png?_=76d02c';
+    foregroundEl.src = '/assets/reading-signpost-in-paris-foreground.png?_=42be09';
 
     var sceneEl = this.sceneEl = document.createElement('img');
     sceneEl.className = 'pic-scene';
