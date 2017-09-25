@@ -106,6 +106,19 @@ section, footer, h1 {
 header.main {
   padding: 24px 6px;
 }
+
+.pic-original,
+.pic-scene,
+.pic-foreground {
+  animation: 0.2s ease-in pop;
+}
+
+@keyframes pop {
+  from {
+    transform: perspective(500px) translateZ(-20px);
+    opacity: 0.5;
+  }
+}
   </style>
   <!-- non-blocking stylesheet references
        (improve this once WICG come out with somethting like <script defer> for stylesheets)
@@ -131,14 +144,14 @@ header.main {
     (function() {
       var linkEl = document.createElement('link');
       linkEl.rel = 'stylesheet';
-      linkEl.href = '/assets/style.min.css?_=632d4c';
+      linkEl.href = '/assets/style.min.css?_=4523cd';
       document.documentElement.firstElementChild.appendChild(linkEl);
     })();
   </script>
   <!-- the old friend <noscript> still works and vary effective as fallbacks. -->
   <noscript>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet" type="text/css">
-    <link href="assets/style.min.css?_=632d4c" rel="stylesheet" type="text/css">
+    <link href="assets/style.min.css?_=4523cd" rel="stylesheet" type="text/css">
   </noscript>
   <!-- the main script, deferred -->
   <script type="text/javascript" src="/assets/script.min.js?_=6c2db7" defer></script>
@@ -277,7 +290,7 @@ I am also fascinated by <a href="https://www.youtube.com/user/Nerdwriter1" targe
 <hr class="section-break" />
 
 <footer>
-<p>I hope you like it here. Best, — <a href="/" class="home">@timdream</a>.</p>
+<p>I hope you like it here. Best,<span id="footer-handle"> — <a href="/" class="home">@timdream</a>.</span></p>
 </footer>
 
 </body>

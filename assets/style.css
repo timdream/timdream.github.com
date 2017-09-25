@@ -502,9 +502,13 @@ a.home:not(:hover):not(:active) {
 .home::before {
   content: "";
   display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1em;
+  vertical-align: -3px;
+  width: 18px;
+  height: 18px;
   background: url("/assets/tiramisu-icon-64-shadow.png?_=3d869c") center center no-repeat;
   background-size: contain;
+}
+
+#footer-handle {
+  white-space: nowrap;
 }
