@@ -113,6 +113,9 @@ PicMotion.prototype = {
   MAX_DEG_MOUSE: 20,
   MAX_DEG_TOUCH: 10,
 
+  SCENE_Z_DIST: 30,
+  FOREGROUND_Z_DIST: -10,
+
   start: function() {
     var areaEl = this.areaEl = document.getElementById('motion-pic');
     if (!areaEl) {
@@ -160,8 +163,10 @@ PicMotion.prototype = {
           this.areaEl.classList.add('active');
           var styleStr = 'perspective(500px) '
             + 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
-          this.foregroundEl.style.transform = styleStr + ' translateZ(60px)';
-          this.sceneEl.style.transform = styleStr + ' translateZ(-10px)';
+          this.foregroundEl.style.transform =
+            styleStr + ' translateZ(' + this.SCENE_Z_DIST + 'px)';
+          this.sceneEl.style.transform =
+            styleStr + ' translateZ(' + this.FOREGROUND_Z_DIST + 'px)';
         }.bind(this));
         break;
       case 'mouseleave':
