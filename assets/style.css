@@ -359,7 +359,7 @@ html.index li {
 }
 
 .list-item.firefox > .icon {
-  background-image: url("/assets/firefox.png?_=105ccc");
+  background-image: url("/assets/firefox.png?_=2e2c47");
 }
 .list-item.firefox {
   background: linear-gradient(101deg, rgb(218, 88, 48) 0%, rgb(206, 77, 47) 22%, rgb(14, 78, 137) 48%, rgb(15, 71, 128) 83%, rgb(249, 211, 50) 94%);
