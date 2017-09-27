@@ -68,7 +68,8 @@ PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/wordcloud-example-noscript.jpg
 
 # Intermediate files generated
-INTERMEDIATE_FILES = assets/cv.js \
+INTERMEDIATE_FILES = service-worker.js \
+	assets/cv.js \
 	assets/cv.css \
 	assets/script.js \
 	assets/style.css \
