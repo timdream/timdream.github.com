@@ -117,6 +117,7 @@ TEMPLATE_REPLACER_COMMAND = sed "s'%$(1)%'$(2)'"
 VAR_REPLACER_COMMAND = sed s/%$(notdir $(1))%/`cat $(1)`/
 LINE_REPLACER_COMMAND = sed -e '/%$(notdir $(1))%/ {' -e 'r $(1)' -e 'd' -e '}'
 HASH_REPLACER_COMMAND = sed -E "s:$(1)(\?\_\=%hash-$(notdir $(1))%)?:$(1)?_=`md5 -q $(1) | cut -b 1-6`:"
+BASE64_REPLACER_COMMAND = sed -E "s:%base64-$(notdir $(1))%:`base64 $(1)`:"
 
 .PHONY: all
 all: $(DEST_FILES)
@@ -193,9 +194,11 @@ assets/script.js: Makefile \
 assets/style.css: Makefile \
 									$(LOGO_FILES) \
 									assets/tiramisu-icon-64-shadow.png \
+									assets/reading-signpost-in-paris.min.png \
 									src/assets/style.tmpl.css
 	cat src/assets/style.tmpl.css \
 		| $(call HASH_REPLACER_COMMAND,assets/tiramisu-icon-64-shadow.png) \
+		| $(call BASE64_REPLACER_COMMAND,assets/reading-signpost-in-paris.min.png) \
 		$(foreach NAME, $(LOGO_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
 		> $@
 

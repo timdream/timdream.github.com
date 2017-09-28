@@ -262,22 +262,31 @@ html.index li {
   display: block;
   height: 280px;
   width: 280px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out,
+    visibility 0.8s ease-in-out;
 }
 
 .pic-original,
 .pic-scene {
   transform: perspective(500px) translateZ(30px);
+  background: url("data:image/png;base64,%base64-reading-signpost-in-paris.min.png%");
+  background-size: cover;
 }
 
 .pic-foreground {
   transform: perspective(500px) translateZ(30px);
 }
 
+.pic-scene,
+.pic-foreground {
+  visibility: hidden;
+}
+
 /* .active === :hover for mouse interactions */
 .pic.motion.active .pic-original,
 .pic.motion.active .pic-scene,
 .pic.motion.active .pic-foreground {
+  visibility: visible;
   transition: none;
   cursor: none;
 }

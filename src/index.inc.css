@@ -2,9 +2,7 @@ header.main {
   padding: 24px 6px;
 }
 
-.pic-original,
-.pic-scene,
-.pic-foreground {
+.pic {
   animation: 0.2s ease-in pop;
 }
 
