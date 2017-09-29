@@ -12,6 +12,7 @@ PAGE_NAMES = firefox \
 # Generated files
 DEST_FILES = $(PAGE_FILES) \
 	$(SERVICE_WORKER_ENTRY) \
+	$(THUMBNAIL_FILES) \
 	$(HASH_REQUEST_DEST_FILES)
 
 # Service worker entry point
@@ -32,6 +33,7 @@ HASH_REQUEST_FILES = cv/timdream.pdf \
 	$(HASH_REQUEST_DEST_FILES) \
 	$(FIRSTPAINT_STYLESHEET_FILES) \
 	$(LOGO_FILES) \
+	$(THUMBNAIL_FILES) \
 	$(PORTFOLIO_IMAGE_FILES)
 
 # All generated files to be accessed online with a ?_=hash URL.
@@ -57,6 +59,12 @@ LOGO_FILES = assets/academia-sinica.svg \
 	assets/moztw.png \
 	assets/owl-publishing.svg \
 	assets/wordcloud.svg
+
+THUMBNAIL_FILES = assets/academia-sinica.icon.svg \
+	assets/demolab.icon.svg \
+	assets/firefox-os.icon.png \
+	assets/firefox.icon.png \
+	assets/moztw.icon.png
 
 # Fils referenced in HTML of the page files.
 PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
@@ -193,13 +201,14 @@ assets/script.js: Makefile \
 
 assets/style.css: Makefile \
 									$(LOGO_FILES) \
+									$(THUMBNAIL_FILES) \
 									assets/tiramisu-icon-64-shadow.png \
 									assets/reading-signpost-in-paris.min.png \
 									src/assets/style.tmpl.css
 	cat src/assets/style.tmpl.css \
 		| $(call HASH_REPLACER_COMMAND,assets/tiramisu-icon-64-shadow.png) \
 		| $(call BASE64_REPLACER_COMMAND,assets/reading-signpost-in-paris.min.png) \
-		$(foreach NAME, $(LOGO_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
+		$(foreach NAME, $(LOGO_FILES) $(THUMBNAIL_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
 		> $@
 
 assets/asmcrypto-decipher.js: Makefile \
@@ -271,6 +280,12 @@ src/encryption/testvalue.hex.txt: Makefile \
 	./src/encryption/cipher.js
 
 $(foreach NAME,$(PAGE_NAMES),$(eval $(call PAGE_RULE,$(NAME))))
+
+assets/%.icon.png: Makefile \
+									 assets/%.png
+	convert assets/$*.png -filter triangle -resize 96x96 assets/$*.icon.png && \
+		pngquant --force -s1 assets/$*.icon.png -o assets/$*.icon.png && \
+		optipng -o9 assets/$*.icon.png
 
 .PHONY: clean
 clean:

@@ -368,14 +368,14 @@ html.index li {
 }
 
 .list-item.firefox > .icon {
-  background-image: url("/assets/firefox.png?_=2e2c47");
+  background-image: url("/assets/firefox.icon.png?_=acd200");
 }
 .list-item.firefox {
   background: linear-gradient(101deg, rgb(218, 88, 48) 0%, rgb(206, 77, 47) 22%, rgb(14, 78, 137) 48%, rgb(15, 71, 128) 83%, rgb(249, 211, 50) 94%);
 }
 
 .list-item.firefox-os > .icon {
-  background-image: url("/assets/firefox-os.png?_=19638c");
+  background-image: url("/assets/firefox-os.icon.png?_=ac06b9");
 }
 .list-item.firefox-os {
   background: linear-gradient(137deg, rgb(0, 82, 159) 0%, rgb(0, 143, 214) 56%, rgb(3, 91, 165) 97%);
@@ -389,21 +389,21 @@ html.index li {
 }
 
 .list-item.academia-sinica > .icon {
-  background-image: url("/assets/academia-sinica.svg?_=38ca46");
+  background-image: url("/assets/academia-sinica.icon.svg?_=84a1d4");
 }
 .list-item.academia-sinica {
   background: linear-gradient(310deg, rgb(19, 131, 188) 1%, rgb(13, 100, 158) 17%, rgb(38, 137, 190) 27%, rgb(169, 194, 218) 35%, rgb(227, 227, 204) 44%, rgb(255, 255, 255) 57%, rgb(232, 233, 212) 72%, rgb(169, 194, 218) 81%, rgb(19, 131, 188) 88%);
 }
 
 .list-item.moztw > .icon {
-  background-image: url("/assets/moztw.png?_=8dcd65");
+  background-image: url("/assets/moztw.icon.png?_=baa4bc");
 }
 .list-item.moztw {
   background: linear-gradient(100deg, rgb(215, 88, 50) 0%, rgb(220, 112, 64) 22%, rgb(231, 164, 99) 62%, rgb(244, 208, 169) 63%, rgb(244, 208, 169) 72%, rgb(0, 0, 0) 73%, rgb(27, 99, 159) 76%, rgb(28, 106, 165) 100%);
 }
 
 .list-item.demolab > .icon {
-  background-image: url("/assets/demolab.svg?_=1ad974");
+  background-image: url("/assets/demolab.icon.svg?_=9f0f50");
 }
 .list-item.demolab {
   background: radial-gradient(circle at -25% -100%, rgb(11, 69, 151) 0%, rgb(23, 64, 143) 24%, rgb(252, 227, 51) 28%, rgb(252, 227, 51) 93%, rgb(217, 10, 43) 96%)
