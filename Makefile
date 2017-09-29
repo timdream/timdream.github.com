@@ -62,7 +62,7 @@ LOGO_FILES = assets/academia-sinica.svg \
 PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/firefox-os-commit.svg \
 	assets/firefox-os-keyboard.png \
-	assets/jszhuyin-learn.gif \
+	assets/jszhuyin-learn.mp4 \
 	assets/moztw-gfx-tw-tim.jpg \
 	assets/moztw-ie8.jpg \
 	assets/wordcloud-example-noscript.jpg

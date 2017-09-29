@@ -465,7 +465,8 @@ figure {
 }
 
 figure img,
-figure canvas {
+figure canvas,
+figure video {
   width: 100%;
 }
 
