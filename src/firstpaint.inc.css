@@ -19,6 +19,7 @@ body > section,
 body > hr,
 body > footer {
   opacity: 0;
+  overflow: hidden;
 }
 
 section, footer {

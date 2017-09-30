@@ -60,6 +60,7 @@ html.page header.main::after {
 body > section,
 body > hr,
 body > footer {
+  overflow: visible;
   opacity: 1;
   animation: 0.2s ease-in dancing-fade-in;
 }
