@@ -31,7 +31,7 @@ h2 {
   color: rgb(60, 60, 60);
 }
 
-h2, article > header p, article ul {
+h2, article > header p, article .desc-time {
   font-family: Helvetica Neue, Helvetica, sans-serif;
 }
 
@@ -160,26 +160,36 @@ article > header p {
   margin: 0;
 }
 
-article ul {
-  margin-top: 0;
-  padding: 0;
-  display: flex;
-}
-
-article ul {
-  color: #5d5d5d;
-}
-article p {
+article p, article li {
   color: #3d3d3d;
 }
 
+article ul {
+  margin-top: 0;
+  padding: 0;
+}
+
+article .desc-time {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+}
+
+article .desc-time {
+  color: #5d5d5d;
+}
+
 li {
-  flex: 1 1 0;
+  flex: 1 1 auto;
   list-style: none;
 }
 
 li.time {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+  text-align: right;
+}
+li.time:first-child {
+  text-align: left;
 }
 
 section {
@@ -187,13 +197,18 @@ section {
 }
 
 @page {
-  margin: 0.5in 0.2in;
+  margin: 0.3in 0.2in;
 }
 
 @media print {
   body > *:not(article),
   article .screen-only {
     display: none;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
   article::after {
