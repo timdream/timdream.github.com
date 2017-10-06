@@ -237,7 +237,7 @@ hr.section-break {
 html.index #handle {
   font-size: 18px;
   line-height: 24px;
-  vertical-align: 4px;
+  vertical-align: -1px;
 }
 
 html.index ul {
