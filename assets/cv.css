@@ -31,7 +31,7 @@ h2 {
   color: rgb(60, 60, 60);
 }
 
-h2, article > header p, article .desc-time {
+h2, article > header p {
   font-family: Helvetica Neue, Helvetica, sans-serif;
 }
 
@@ -160,36 +160,40 @@ article > header p {
   margin: 0;
 }
 
-article p, article li {
+article ul {
+  padding-left: 0;
+}
+
+article li {
+  list-style: none;
+  /* Sorry, only works in Firefox
+  list-style-type: "\2013";*/
+  padding-left: 1em;
+  text-indent: -1em;
+}
+article li::before {
+  content: "\2013"; /* en dash */
+  display: inline-block;
+  width: 1em;
+  text-indent: 0;
+}
+
+article p, article li, article .time {
   color: #3d3d3d;
 }
 
-article ul {
-  margin-top: 0;
-  padding: 0;
-}
-
-article .desc-time {
+.head-time {
   display: flex;
   flex-wrap: wrap;
-  font-size: 13.5px;
 }
 
-article .desc-time {
-  color: #5d5d5d;
-}
-
-li {
+.head-time span.head,
+.head-time span.time {
   flex: 1 1 auto;
-  list-style: none;
 }
 
-li.time {
-  flex: 1 1 auto;
+.time {
   text-align: right;
-}
-li.time:first-child {
-  text-align: left;
 }
 
 section {
@@ -216,9 +220,9 @@ section {
     display: block;
     line-height: 32px;
     font-family: Times, serif;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.4);
     text-align: center;
   }
 }
