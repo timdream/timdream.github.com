@@ -215,6 +215,29 @@ section {
     margin-bottom: 10px;
   }
 
+  body.with-page-number::before,
+  body.with-page-number::after {
+    display: block;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Unfortunately Chrome doesn't increment css counter when
+     rendering position: fixed element on multiple pages, so
+     we will need this hack that only works with two pages.
+  */
+  body.with-page-number::after {
+    position: absolute; /* Shows up on first page */
+    background-color: white;
+    content: '1';
+  }
+
+  body.with-page-number::before {
+    position: fixed; /* Shows up on every page */
+    content: '2';
+  }
+
   article::after {
     content: '§';
     display: block;
