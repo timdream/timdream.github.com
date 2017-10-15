@@ -222,10 +222,10 @@ CVDecipher.prototype = {
   load: function(password) {
     var worker;
     if (this.useWebCrypto) {
-      worker = this.worker = new Worker('/assets/webcrypto-decipher.min.js?_=5c29ff');
+      worker = this.worker = new Worker('/assets/webcrypto-decipher.min.js?_=21d2cc');
       this.decipherName = 'Web Crypto Decipher';
     } else {
-      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=c60fc8');
+      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=b60414');
       this.decipherName = 'asmCrypto Decipher';
     }
     worker.postMessage({ password: password });
