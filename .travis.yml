@@ -7,7 +7,7 @@ script: >
   -H "X-Auth-Email: timdream@gmail.com"
   -H "X-Auth-Key: $CLOUDFLARE_KEY"
   -H "Content-Type: application/json"
-  --data '{"files":["https://timdream.org/service-worker.min.js"]}'
+  --data '{"purge_everything":true}'
 env:
   global:
     secure: J7eudo6q/mX1QsJhLRYDN+nAF1R8NzpqaSc41Z4Dr40SZrYKTlUJL53qpZuIANJefXw+LrY39Io78w19GxdQ9R3bIOhUnRTLqsTL0Uuohle96x38glvF0cGr7ozpxY2FX1Tq7gZjBZaG1wOF6morp6gfN+Qs1oUdqOuzqa/nosE=
