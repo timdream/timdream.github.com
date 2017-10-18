@@ -12,6 +12,14 @@ CVApp.prototype = {
 
     this.cipherUI = new CVCipherUI();
     this.cipherUI.start();
+
+    if (document.location.hash.substr(1)) {
+      var base64password = (document.location.hash.match(/p=(\w+)/) || [])[1];
+      if (base64password) {
+        var password = atob(base64password);
+        this.cipherUI.decrypt(password);
+      }
+    }
   },
 
   handleEvent: function(evt) {
@@ -69,12 +77,13 @@ CVCipherUI.prototype = {
     }
   },
 
-  decrypt: function() {
+  decrypt: function(password) {
     this.state = 'decrypting';
     document.body.classList.add('decrypting');
-    var password = document.getElementById('unlock-password').value;
-    document.getElementById('unlock-password').value = '';
-
+    if (!password) {
+      password = document.getElementById('unlock-password').value;
+      document.getElementById('unlock-password').value = '';
+    }
     var decipher = new CVDecipher();
     decipher.onloadend = this.decipherLoadEnd.bind(this);
     decipher.load(password);
