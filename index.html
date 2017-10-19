@@ -21,7 +21,7 @@
   Assuming you have not noticed everything, here is a small feature list:
 
   * This website is responsive and should work on your phone.
-  * Touch or move your mouse cursor over the picture for some fun.
+  * Touch or move your mouse cursor over my profile picture for some fun.
   * The site is offline-ready with the help from Service Worker.
     Versioning is made atomic and page updates with a AppCache-like flow.
   * Download my CV with contact information by decrypting the information with
@@ -29,6 +29,8 @@
   * Page transitions.
   * If the CSS Font Loading API works peroperly on your browser, you should not
     see FOUT if the webfont has not been loaded.
+  * Google Analytics will not load when Do Not Track is turned on.
+  * Lastly, the site can be viewed with JavaScript disabled.
 
   Enjoy. Feel free to reach out!
 
@@ -119,7 +121,7 @@ header.main {
 }
   </style>
   <!-- non-blocking stylesheet references
-       (improve this once WICG come out with somethting like <script defer> for stylesheets)
+       (improve this once WICG come out with something like <script defer> for stylesheets)
   -->
   <script type="text/javascript">
     (function() {
