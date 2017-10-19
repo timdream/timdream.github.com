@@ -79,6 +79,7 @@ PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
 INTERMEDIATE_FILES = service-worker.js \
 	assets/cv.js \
 	assets/cv.css \
+	assets/cv-screenshot.min.png \
 	assets/script.js \
 	assets/style.css \
 	assets/asmcrypto-decipher.js \
@@ -153,12 +154,14 @@ cv/index.html: src/cv.tmpl.html \
 							 src/firstpaint-cv.inc.css \
 							 assets/cv.min.js \
 							 assets/cv.min.css \
+							 assets/cv-screenshot.min.png \
 							 cv/timdream.pdf
 	mkdir -p cv &&\
 	cat src/cv.tmpl.html |\
 		$(call LINE_REPLACER_COMMAND,src/firstpaint-cv.inc.css) |\
 		$(call HASH_REPLACER_COMMAND,assets/cv.min.js) |\
 		$(call HASH_REPLACER_COMMAND,assets/cv.min.css) |\
+		$(call HASH_REPLACER_COMMAND,assets/cv-screenshot.min.png) |\
 		$(call HASH_REPLACER_COMMAND,cv/timdream.pdf) \
 		> cv/index.html
 
@@ -286,6 +289,11 @@ assets/%.icon.png: Makefile \
 	convert assets/$*.png -filter triangle -resize 96x96 assets/$*.icon.png && \
 		pngquant --force -s1 assets/$*.icon.png -o assets/$*.icon.png && \
 		optipng -o9 assets/$*.icon.png
+
+assets/%.min.png: Makefile \
+									assets/%.png
+	pngquant -s1 assets/$*.png -o assets/$*.min.png && \
+	optipng -o9 assets/$*.min.png
 
 .PHONY: clean
 clean:

@@ -45,6 +45,27 @@ h2, h3 {
   line-height: normal;
 }
 
+body.screenshot {
+  background: transparent;
+  margin: 8px;
+}
+body.screenshot > :not(article) {
+  display: none;
+}
+body.screenshot article {
+  margin: 0 auto;
+}
+body.screenshot article::after {
+  display: block;
+  content: '';
+  position: fixed;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(180deg, transparent 0%, #fff 100%);
+  left: 8px;
+  right: 8px;
+}
+
 @media screen {
   body.unlock-dialog #unlock-form {
     transform: none;

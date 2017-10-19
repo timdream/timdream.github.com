@@ -35,6 +35,11 @@ async function shot() {
   await page.$eval('body', el => el.classList.add('with-page-number'));
   await page.pdf({ path: __dirname + '/../cv/timdream.pdf', format: 'Letter'});
 
+  // Also get the screenshot for sharing
+  await page.$eval('body', el => el.classList.add('screenshot'));
+  await page.screenshot({path: __dirname + '/../assets/cv-screenshot.png', omitBackground: true });
+  await page.$eval('body', el => el.classList.remove('screenshot'));
+
   // Decrypt
   await page.evaluate(password => {
     document.getElementById('unlock-password').value = password;
