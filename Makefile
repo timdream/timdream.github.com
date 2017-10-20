@@ -292,7 +292,7 @@ assets/%.icon.png: Makefile \
 
 assets/%.min.png: Makefile \
 									assets/%.png
-	pngquant -s1 assets/$*.png -o assets/$*.min.png && \
+	pngquant --force -s1 assets/$*.png -o assets/$*.min.png && \
 	optipng -o9 assets/$*.min.png
 
 .PHONY: clean
