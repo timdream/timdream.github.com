@@ -117,7 +117,13 @@ CVApp.prototype = {
       if (base64password) {
         var password = atob(base64password);
         this.cipherUI.decrypt(password);
+        window.history.replaceState(
+          { password: password }, document.title, './');
       }
+    }
+
+    if (window.history.state && window.history.state.password) {
+      this.cipherUI.decrypt(window.history.state.password);
     }
   },
 
