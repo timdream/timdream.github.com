@@ -4,10 +4,11 @@ header.main {
 
 .pic {
   animation: 0.2s ease-in pop;
+  perspective: 500px;
 }
 
 @keyframes pop {
   from {
-    transform: perspective(500px) translateZ(-20px);
+    transform: translateZ(-20px);
   }
 }

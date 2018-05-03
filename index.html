@@ -112,11 +112,12 @@ header.main {
 
 .pic {
   animation: 0.2s ease-in pop;
+  perspective: 500px;
 }
 
 @keyframes pop {
   from {
-    transform: perspective(500px) translateZ(-20px);
+    transform: translateZ(-20px);
   }
 }
   </style>
@@ -144,17 +145,17 @@ header.main {
     (function() {
       var linkEl = document.createElement('link');
       linkEl.rel = 'stylesheet';
-      linkEl.href = '/assets/style.min.css?_=f28ea6';
+      linkEl.href = '/assets/style.min.css?_=b564e1';
       document.documentElement.firstElementChild.appendChild(linkEl);
     })();
   </script>
   <!-- the old friend <noscript> still works and vary effective as fallbacks. -->
   <noscript>
     <link href="https://fonts.googleapis.com/css?family=Merriweather:700" rel="stylesheet" type="text/css">
-    <link href="assets/style.min.css?_=f28ea6" rel="stylesheet" type="text/css">
+    <link href="assets/style.min.css?_=b564e1" rel="stylesheet" type="text/css">
   </noscript>
   <!-- the main script, deferred -->
-  <script type="text/javascript" src="/assets/script.min.js?_=b4ded5" defer></script>
+  <script type="text/javascript" src="/assets/script.min.js?_=2cd6d2" defer></script>
 </head>
 <body>
 <header class="main">

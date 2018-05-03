@@ -269,13 +269,13 @@ html.index li {
 
 .pic-original,
 .pic-scene {
-  transform: perspective(500px) translateZ(30px);
+  transform: translateZ(30px);
   background: url("data:image/png;base64,%base64-reading-signpost-in-paris.min.png%");
   background-size: cover;
 }
 
 .pic-foreground {
-  transform: perspective(500px) translateZ(30px);
+  transform: translateZ(30px);
 }
 
 .pic-scene,

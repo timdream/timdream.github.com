@@ -62,8 +62,7 @@ PicMotion.prototype = {
             (evt.touches[0].clientY - window.innerHeight / 2) / window.innerHeight);
         this.updateAngle(function() {
           this.areaEl.classList.add('active');
-          var styleStr = 'perspective(500px) '
-            + 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
+          var styleStr = 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
           this.foregroundEl.style.transform =
             styleStr + ' translateZ(' + this.SCENE_Z_DIST + 'px)';
           this.sceneEl.style.transform =
