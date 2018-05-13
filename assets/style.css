@@ -283,13 +283,16 @@ html.index li {
   visibility: hidden;
 }
 
+.pic.motion.active {
+  cursor: none;
+}
+
 /* .active === :hover for mouse interactions */
 .pic.motion.active .pic-original,
 .pic.motion.active .pic-scene,
 .pic.motion.active .pic-foreground {
   visibility: visible;
   transition: none;
-  cursor: none;
 }
 
 .pic.motion .pic-original {
