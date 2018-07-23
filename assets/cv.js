@@ -237,10 +237,10 @@ CVDecipher.prototype = {
   load: function(password) {
     var worker;
     if (this.useWebCrypto) {
-      worker = this.worker = new Worker('/assets/webcrypto-decipher.min.js?_=6cbffb');
+      worker = this.worker = new Worker('/assets/webcrypto-decipher.min.js?_=8bad04');
       this.decipherName = 'Web Crypto Decipher';
     } else {
-      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=a45b8e');
+      worker = this.worker = new Worker('/assets/asmcrypto-decipher.min.js?_=fd4c4a');
       this.decipherName = 'asmCrypto Decipher';
     }
     worker.postMessage({ password: password });
