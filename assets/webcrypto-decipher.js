@@ -77,8 +77,8 @@ var ivArr = hexToArray('c9567d08a04248a3202e7a5541ff9cf0');
 var testEncryptedData = hexToArray('ab7334b313ea8e5333a1db44dd782e59');
 var testEncryptedPlainText = 'testvalue';
 
-var encryptedDOMSteps = '/cv/steps.json.aes?_=22c917';
-var encryptedPrivatePDF = '/cv/timdream-private.pdf.aes?_=d2051e';
+var encryptedDOMSteps = '/cv/steps.json.aes?_=67f271';
+var encryptedPrivatePDF = '/cv/timdream-private.pdf.aes?_=c8b5b4';
 
 self.onmessage = function(evt) {
   var password = evt.data.password;
