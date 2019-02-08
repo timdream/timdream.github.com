@@ -372,14 +372,14 @@ html.index li {
 }
 
 .list-item.firefox > .icon {
-  background-image: url("/assets/firefox.icon.png?_=acd200");
+  background-image: url("/assets/firefox.icon.png?_=4bbced");
 }
 .list-item.firefox {
   background: linear-gradient(101deg, rgb(218, 88, 48) 0%, rgb(206, 77, 47) 22%, rgb(14, 78, 137) 48%, rgb(15, 71, 128) 83%, rgb(249, 211, 50) 94%);
 }
 
 .list-item.firefox-os > .icon {
-  background-image: url("/assets/firefox-os.icon.png?_=ac06b9");
+  background-image: url("/assets/firefox-os.icon.png?_=aca0f2");
 }
 .list-item.firefox-os {
   background: linear-gradient(137deg, rgb(0, 82, 159) 0%, rgb(0, 143, 214) 56%, rgb(3, 91, 165) 97%);
@@ -400,7 +400,7 @@ html.index li {
 }
 
 .list-item.moztw > .icon {
-  background-image: url("/assets/moztw.icon.png?_=baa4bc");
+  background-image: url("/assets/moztw.icon.png?_=2c7809");
 }
 .list-item.moztw {
   background: linear-gradient(100deg, rgb(215, 88, 50) 0%, rgb(220, 112, 64) 22%, rgb(231, 164, 99) 62%, rgb(244, 208, 169) 63%, rgb(244, 208, 169) 72%, rgb(0, 0, 0) 73%, rgb(27, 99, 159) 76%, rgb(28, 106, 165) 100%);
