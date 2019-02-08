@@ -57,7 +57,12 @@ self.oninstall = evt => {
           .filter(url => url.includes('?_='))
           .map(url => caches.match(url)
             .then(response => response || fetch(url))
-            .then(response => cache.put(url, response))),
+            .then(response => {
+              if (!response.ok && url.includes("fonts")) {
+                return;
+              }
+              return cache.put(url, response);
+            })),
         fileList.filter(url => !url.includes('?_='))
           .map(url => fetch(url + '?_=' + versionHash)
             .then(response => {
