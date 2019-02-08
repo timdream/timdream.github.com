@@ -29,7 +29,7 @@
     (function() {
       var linkEl = document.createElement('link');
       linkEl.rel = 'stylesheet';
-      linkEl.href = 'https://fonts.googleapis.com/css?family=Merriweather:400,700';
+      linkEl.href = '/assets/cv.min.css?_=%hash-cv.min.css%';
       document.documentElement.firstElementChild.appendChild(linkEl);
       var fontFaceSet = document.fonts;
       if (fontFaceSet) {
@@ -42,15 +42,8 @@
         setTimeout(loadend, 500);
       }
     })();
-    (function() {
-      var linkEl = document.createElement('link');
-      linkEl.rel = 'stylesheet';
-      linkEl.href = '/assets/cv.min.css?_=%hash-cv.min.css%';
-      document.documentElement.firstElementChild.appendChild(linkEl);
-    })();
   </script>
   <noscript>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css">
     <link href="/assets/cv.min.css?_=%hash-cv.min.css%" rel="stylesheet" type="text/css">
   </noscript>
   <script type="text/javascript" src="/assets/cv.min.js?_=%hash-cv.min.js%" defer></script>

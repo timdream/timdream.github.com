@@ -34,7 +34,8 @@ HASH_REQUEST_FILES = cv/timdream.pdf \
 	$(FIRSTPAINT_STYLESHEET_FILES) \
 	$(LOGO_FILES) \
 	$(THUMBNAIL_FILES) \
-	$(PORTFOLIO_IMAGE_FILES)
+	$(PORTFOLIO_IMAGE_FILES) \
+	$(FONT_FILES)
 
 # All generated files to be accessed online with a ?_=hash URL.
 HASH_REQUEST_DEST_FILES = assets/cv.min.js \
@@ -78,6 +79,12 @@ PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/moztw-gfx-tw-tim.jpg \
 	assets/moztw-ie8.jpg \
 	assets/wordcloud-example-noscript.jpg
+
+# Web fonts
+FONT_FILES = assets/fonts/merriweather-v19-latin-700.woff \
+	assets/fonts/merriweather-v19-latin-700.woff2 \
+	assets/fonts/merriweather-v19-latin-regular.woff \
+	assets/fonts/merriweather-v19-latin-regular.woff2
 
 # Intermediate files generated
 INTERMEDIATE_FILES = service-worker.js \
@@ -191,8 +198,10 @@ assets/cv.js: Makefile \
 		> assets/cv.js
 
 assets/cv.css: Makefile \
-							 src/assets/cv.tmpl.css
+							 src/assets/cv.tmpl.css \
+						   $(FONT_FILES)
 	cat src/assets/cv.tmpl.css \
+		$(foreach NAME, $(FONT_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
 		> assets/cv.css
 
 assets/script.js: Makefile \
@@ -209,13 +218,14 @@ assets/script.js: Makefile \
 assets/style.css: Makefile \
 									$(LOGO_FILES) \
 									$(THUMBNAIL_FILES) \
+									$(FONT_FILES) \
 									assets/tiramisu-icon-64-shadow.png \
 									assets/reading-signpost-in-paris.min.png \
 									src/assets/style.tmpl.css
 	cat src/assets/style.tmpl.css \
 		| $(call HASH_REPLACER_COMMAND,assets/tiramisu-icon-64-shadow.png) \
 		| $(call BASE64_REPLACER_COMMAND,assets/reading-signpost-in-paris.min.png) \
-		$(foreach NAME, $(LOGO_FILES) $(THUMBNAIL_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
+		$(foreach NAME, $(LOGO_FILES) $(THUMBNAIL_FILES) $(FONT_FILES),| $(call HASH_REPLACER_COMMAND,$(NAME))) \
 		> $@
 
 assets/asmcrypto-decipher.js: Makefile \
