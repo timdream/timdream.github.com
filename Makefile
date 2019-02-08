@@ -12,7 +12,7 @@ PAGE_NAMES = firefox \
 # Generated files
 DEST_FILES = $(PAGE_FILES) \
 	$(SERVICE_WORKER_ENTRY) \
-	$(THUMBNAIL_FILES) \
+	$(PNG_THUMBNAIL_FILES) \
 	$(HASH_REQUEST_DEST_FILES)
 
 # Service worker entry point
@@ -60,9 +60,13 @@ LOGO_FILES = assets/academia-sinica.svg \
 	assets/owl-publishing.svg \
 	assets/wordcloud.svg
 
-THUMBNAIL_FILES = assets/academia-sinica.icon.svg \
-	assets/demolab.icon.svg \
-	assets/firefox-os.icon.png \
+THUMBNAIL_FILES = $(SVG_THUMBNAIL_FILES) \
+	$(PNG_THUMBNAIL_FILES)
+
+SVG_THUMBNAIL_FILES = assets/academia-sinica.icon.svg \
+	assets/demolab.icon.svg
+
+PNG_THUMBNAIL_FILES = assets/firefox-os.icon.png \
 	assets/firefox.icon.png \
 	assets/moztw.icon.png
 
