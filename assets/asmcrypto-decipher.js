@@ -65,7 +65,7 @@ var testEncryptedData = hexToArray('ab7334b313ea8e5333a1db44dd782e59');
 var testEncryptedPlainText = 'testvalue';
 
 var encryptedDOMSteps = '/cv/steps.json.aes?_=67f271';
-var encryptedPrivatePDF = '/cv/timdream-private.pdf.aes?_=852d9a';
+var encryptedPrivatePDF = '/cv/timdream-private.pdf.aes?_=d167fa';
 
 self.onmessage = function(evt) {
   var password = evt.data.password;
