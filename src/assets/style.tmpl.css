@@ -10,17 +10,14 @@
        url('/assets/fonts/merriweather-v19-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
-html:not(.font-loading) header.main > * {
+html:not(.font-loading) header.main h1 {
   opacity: 1;
-  animation: 0.2s ease-in fade-in;
-}
-
-html:not(.font-loading) header.main > * > * {
-  opacity: 1;
+  animation: .2s ease-in fade-in;
 }
 
 @keyframes fade-in {
   from { opacity: 0 }
+  10% { opacity: 0 }
   to { opacity: 1 }
 }
 

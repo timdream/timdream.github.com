@@ -13,8 +13,7 @@ body {
   -webkit-text-size-adjust: none;
 }
 
-header.main > *,
-header.main > * > *, /* Chrome bug? */
+header.main h1,
 body > section,
 body > hr,
 body > footer {
