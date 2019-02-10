@@ -378,6 +378,13 @@ html.index li {
   font-size: 15px;
 }
 
+.list-item.apple > .icon {
+  background-image: url("/assets/apple.svg");
+}
+.list-item.apple {
+  background: linear-gradient(90deg, rgb(250, 250, 250) 0, rgb(250, 250, 250) 30%, #b3b3b3 100%);
+}
+
 .list-item.firefox > .icon {
   background-image: url("/assets/firefox.icon.png");
 }
@@ -396,7 +403,7 @@ html.index li {
   background-image: url("/assets/owl-publishing.svg");
 }
 .list-item.owl-publishing {
-  background: linear-gradient(160deg, rgb(193, 231, 212) 0, rgb(232,255,240) 20%, rgb(232,255,240) 60%, rgb(1, 157,79) 100%)
+  background: linear-gradient(160deg, rgb(193, 231, 212) 0, rgb(232,255,240) 20%, rgb(232,255,240) 60%, rgb(1, 157,79) 100%);
 }
 
 .list-item.academia-sinica > .icon {
@@ -417,7 +424,7 @@ html.index li {
   background-image: url("/assets/demolab.icon.svg");
 }
 .list-item.demolab {
-  background: radial-gradient(circle at -25% -100%, rgb(11, 69, 151) 0%, rgb(23, 64, 143) 24%, rgb(252, 227, 51) 28%, rgb(252, 227, 51) 93%, rgb(217, 10, 43) 96%)
+  background: radial-gradient(circle at -25% -100%, rgb(11, 69, 151) 0%, rgb(23, 64, 143) 24%, rgb(252, 227, 51) 28%, rgb(252, 227, 51) 93%, rgb(217, 10, 43) 96%);
 }
 
 .list-item.wordcloud > .icon {

@@ -1,6 +1,7 @@
 
 # Name of the portfolio pages to generate.
-PAGE_NAMES = firefox \
+PAGE_NAMES = apple \
+  firefox \
 	firefox-os \
 	owl-publishing \
 	academia-sinica \
@@ -53,6 +54,7 @@ FIRSTPAINT_STYLESHEET_FILES = assets/45-degree-fabric-dark.png \
 
 # Files refreneced in HTML of the page files *and* style.css
 LOGO_FILES = assets/academia-sinica.svg \
+	assets/apple.svg \
 	assets/demolab.svg \
 	assets/firefox-os.png \
 	assets/firefox.png \
