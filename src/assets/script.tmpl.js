@@ -48,40 +48,54 @@ PicMotion.prototype = {
         // Disregard emulated mouse events
         this.areaEl.removeEventListener('mousemove', this);
         this.areaEl.removeEventListener('mouseleave', this);
-      break;
+        break;
 
       case 'touchmove':
-      case 'mousemove':
-        var x = 2 * ('offsetX' in evt ?
-          this.MAX_DEG_MOUSE * ((evt.offsetX - 150) / 300) :
-          this.MAX_DEG_TOUCH *
-            (evt.touches[0].clientX - window.innerWidth / 2) / window.innerWidth);
-        var y = -2 * ('offsetY' in evt ?
-          this.MAX_DEG_MOUSE * ((evt.offsetY - 150) / 300) :
-          this.MAX_DEG_TOUCH *
-            (evt.touches[0].clientY - window.innerHeight / 2) / window.innerHeight);
-        this.updateAngle(function() {
-          this.areaEl.classList.add('active');
-          var styleStr = 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
-          this.foregroundEl.style.transform =
-            styleStr + ' translateZ(' + this.SCENE_Z_DIST + 'px)';
-          this.sceneEl.style.transform =
-            styleStr + ' translateZ(' + this.FOREGROUND_Z_DIST + 'px)';
-        }.bind(this));
+        // Considering the touch also scrolls the page,
+        // the motion is derived from the position of the finger on the viewport,
+        // as the vertical position of the finger will likely stay the same.
+        var x = 2 * this.MAX_DEG_TOUCH *
+          (evt.touches[0].clientX - window.innerWidth / 2) / window.innerWidth;
+        var y = -2 * this.MAX_DEG_TOUCH *
+          (evt.touches[0].clientY - window.innerHeight / 2) / window.innerHeight;
+        this.scheduleMotionUpdate(x, y);
         break;
+
+      case 'mousemove':
+        // The motion is based on the position of the cursor on the picture.
+        var x = 2 * this.MAX_DEG_MOUSE * ((evt.offsetX - 150) / 300);
+        var y = -2 * this.MAX_DEG_MOUSE * ((evt.offsetY - 150) / 300);
+        this.scheduleMotionUpdate(x, y);
+        break;
+
       case 'mouseleave':
       case 'touchend':
       case 'touchcancel':
-        this.updateAngle(function() {
-          this.areaEl.classList.remove('active');
-          this.foregroundEl.style.transform = '';
-          this.sceneEl.style.transform = '';
-        }.bind(this));
+        this.scheduleMotionEnd();
         break;
     }
   },
 
-  updateAngle: function(callback) {
+  scheduleMotionUpdate: function(x, y) {
+    this.scheduleStyleChange(function() {
+      this.areaEl.classList.add('active');
+      var styleStr = 'rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
+      this.foregroundEl.style.transform =
+        styleStr + ' translateZ(' + this.SCENE_Z_DIST + 'px)';
+      this.sceneEl.style.transform =
+        styleStr + ' translateZ(' + this.FOREGROUND_Z_DIST + 'px)';
+    }.bind(this));
+  },
+
+  scheduleMotionEnd() {
+    this.scheduleStyleChange(function() {
+      this.areaEl.classList.remove('active');
+      this.foregroundEl.style.transform = '';
+      this.sceneEl.style.transform = '';
+    }.bind(this));
+  },
+
+  scheduleStyleChange: function(callback) {
     (window.cancelAnimationFrame || window.clearTimeout)(this.reqId);
     this.reqId = (window.requestAnimationFrame || window.setTimeout)(callback);
   }
