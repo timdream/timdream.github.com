@@ -231,7 +231,7 @@ article p, article li, article .time {
 }
 
 section {
-  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 @page {
