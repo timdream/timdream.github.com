@@ -35,7 +35,7 @@ HASH_REQUEST_FILES = cv/timdream.pdf \
 	$(FIRSTPAINT_STYLESHEET_FILES) \
 	$(LOGO_FILES) \
 	$(THUMBNAIL_FILES) \
-	$(PORTFOLIO_IMAGE_FILES) \
+	$(PAGE_IMAGE_FILES) \
 	$(FONT_FILES)
 
 # All generated files to be accessed online with a ?_=hash URL.
@@ -74,7 +74,7 @@ PNG_THUMBNAIL_FILES = assets/firefox-os.icon.png \
 	assets/moztw.icon.png
 
 # Fils referenced in HTML of the page files.
-PORTFOLIO_IMAGE_FILES = assets/demolab-screenshot.jpg \
+PAGE_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/firefox-os-commit.svg \
 	assets/firefox-os-keyboard.png \
 	assets/jszhuyin-learn.mp4 \
@@ -105,7 +105,7 @@ PAGE_EXTRA_FILE = $(wildcard src/$(1).header.inc.html)
 PAGE_EXTRA_COMMAND = sed -e '/%PAGEEXTRA%/ {' $(if $(call PAGE_EXTRA_FILE,$(1)),-e 'r src/$(1).header.inc.html' -e 'd',-e 'd') -e '}'
 
 define PAGE_RULE
-portfolio/$(1)/index.html: Makefile \
+$(2)/index.html: Makefile \
 		src/firstpaint.inc.css \
 		src/page.inc.css \
 		src/$(1).inc.html \
@@ -117,8 +117,8 @@ portfolio/$(1)/index.html: Makefile \
 		assets/style.min.css \
 		$(FIRSTPAINT_STYLESHEET_FILES) \
 		$(LOGO_FILES) \
-		$(PORTFOLIO_IMAGE_FILES)
-	mkdir -p portfolio/$(1) &&\
+		$(PAGE_IMAGE_FILES)
+	mkdir -p $(2) &&\
 	cat src/page.tmpl.html \
 		| $(call LINE_REPLACER_COMMAND,src/footer.inc.html) \
 		| $(call LINE_REPLACER_COMMAND,src/page.inc.css) \
@@ -126,13 +126,13 @@ portfolio/$(1)/index.html: Makefile \
 		| $(call LINE_REPLACER_COMMAND,src/$(1).inc.html) \
 		| $(call PAGE_EXTRA_COMMAND,$(1)) \
 		| $(call LINE_REPLACER_COMMAND,src/firstpaint.inc.css) \
-		$(foreach NAME,$(LOGO_FILES) $(PORTFOLIO_IMAGE_FILES) $(FIRSTPAINT_STYLESHEET_FILES),\
+		$(foreach NAME,$(LOGO_FILES) $(PAGE_IMAGE_FILES) $(FIRSTPAINT_STYLESHEET_FILES),\
 			| $(call HASH_REPLACER_COMMAND,$(NAME))) \
-		| $(call TEMPLATE_REPLACER_COMMAND,PORTFOLIOTOTLE,%$(1).title.inc.html%) \
+		| $(call TEMPLATE_REPLACER_COMMAND,PAGE_TITLE,%$(1).title.inc.html%) \
 		| $(call LINE_REPLACER_COMMAND,src/$(1).title.inc.html) \
 		| $(call HASH_REPLACER_COMMAND,assets/script.min.js) \
 		| $(call HASH_REPLACER_COMMAND,assets/style.min.css) \
-		> portfolio/$(1)/index.html
+		> $(2)/index.html
 endef
 
 TEMPLATE_REPLACER_COMMAND = sed "s'%$(1)%'$(2)'"
@@ -298,7 +298,7 @@ src/encryption/testvalue.hex.txt: Makefile \
 																	src/encryption/timdream-private.pdf
 	./src/encryption/cipher.js
 
-$(foreach NAME,$(PAGE_NAMES),$(eval $(call PAGE_RULE,$(NAME))))
+$(foreach NAME,$(PAGE_NAMES),$(eval $(call PAGE_RULE,$(NAME),portfolio/$(NAME))))
 
 assets/%.icon.png: Makefile \
 									 assets/%.png
