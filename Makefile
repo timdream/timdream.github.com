@@ -83,10 +83,10 @@ PAGE_IMAGE_FILES = assets/demolab-screenshot.jpg \
 	assets/wordcloud-example-noscript.jpg
 
 # Web fonts
-FONT_FILES = assets/fonts/merriweather-v19-latin-700.woff \
-	assets/fonts/merriweather-v19-latin-700.woff2 \
-	assets/fonts/merriweather-v19-latin-regular.woff \
-	assets/fonts/merriweather-v19-latin-regular.woff2
+FONT_FILES = assets/fonts/merriweather-v21-latin-700.woff \
+	assets/fonts/merriweather-v21-latin-700.woff2 \
+	assets/fonts/merriweather-v21-latin-regular.woff \
+	assets/fonts/merriweather-v21-latin-regular.woff2
 
 # Intermediate files generated
 INTERMEDIATE_FILES = service-worker.js \
