@@ -1,4 +1,8 @@
 
+# Stop Make from probing into implicit rules
+MAKEFLAGS += --no-builtin-rules
+.SUFFIXES:
+
 # Name of the portfolio pages to generate.
 PAGE_NAMES = apple \
   firefox \
