@@ -250,8 +250,9 @@ assets/asmcrypto-decipher.js: Makefile \
 		> assets/asmcrypto-decipher.js
 
 ./node_modules/.bin/uglifycss \
-./node_modules/uglify-es/bin/uglifyjs:
-		npm install
+./node_modules/uglify-es/bin/uglifyjs: package.json
+		npm install && \
+		touch ./node_modules/.bin/uglifycss ./node_modules/uglify-es/bin/uglifyjs
 
 %.min.css: Makefile \
 					 node_modules/.bin/uglifycss \
