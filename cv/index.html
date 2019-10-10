@@ -6,7 +6,7 @@
 
   <title>Curriculum Vitæ — Timothy Guan&#8209;tin Chien, @timdream</title>
   <meta name="author" content="Timothy Guan-tin Chien">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <meta property="og:title" content="Curriculum Vitæ — Timothy Guan&#8209;tin Chien, @timdream" />
   <meta property="og:description" content="A software engineer with more than a decade of fundamental knowledge on browsers, JavaScript, and the Web.">
@@ -27,6 +27,12 @@
   body {
     background: linear-gradient(90deg, #f0f0f0 0%, #f8f8f8 20%, #f8f8f8 80%, #f0f0f0 100%), #ffffff;
   }
+}
+
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 body, input, button {
