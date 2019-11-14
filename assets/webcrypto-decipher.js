@@ -1,16 +1,18 @@
-'use strict';
+"use strict";
 
 function getKey(password) {
-  return self.crypto.subtle.importKey('raw', strToArray(password),
-      {name: 'PBKDF2'}, false, ['deriveKey'])
+  return self.crypto.subtle
+    .importKey("raw", strToArray(password), { name: "PBKDF2" }, false, [
+      "deriveKey"
+    ])
     .then(function(masterKey) {
       return self.crypto.subtle.deriveKey(
-        { 'name': 'PBKDF2', 'salt': saltArr,
-          'iterations': 500, 'hash': 'SHA-256' },
+        { name: "PBKDF2", salt: saltArr, iterations: 500, hash: "SHA-256" },
         masterKey,
-        { "name": 'AES-CBC', "length": 256 },
+        { name: "AES-CBC", length: 256 },
         false,
-        ['decrypt' ])
+        ["decrypt"]
+      );
     })
     .then(function(key) {
       return Promise.all([key, decipher(key, testEncryptedData)]);
@@ -30,7 +32,10 @@ function getKey(password) {
 
 function decipher(key, encryptedArr) {
   return self.crypto.subtle.decrypt(
-    { "name": 'AES-CBC', iv: ivArr }, key, encryptedArr);
+    { name: "AES-CBC", iv: ivArr },
+    key,
+    encryptedArr
+  );
 }
 
 function hexToArray(str) {
@@ -45,24 +50,34 @@ function hexToArray(str) {
 function strToArray(str) {
   return Uint8Array.from(
     unescape(encodeURIComponent(str))
-      .split('').map(function(ch) { return ch.charCodeAt(0); }));
+      .split("")
+      .map(function(ch) {
+        return ch.charCodeAt(0);
+      })
+  );
 }
 
 function arrayToStr(arr) {
   return decodeURIComponent(
     escape(
-      Array.prototype.map.call(arr, function (i) { return String.fromCharCode(i); }).join('')));
+      Array.prototype.map
+        .call(arr, function(i) {
+          return String.fromCharCode(i);
+        })
+        .join("")
+    )
+  );
 }
 
 function getFile(filename) {
   var xhr = new XMLHttpRequest();
-  xhr.responseType = 'arraybuffer';
-  xhr.open('GET', filename);
+  xhr.responseType = "arraybuffer";
+  xhr.open("GET", filename);
   xhr.send(null);
   return new Promise(function(resolve, reject) {
     xhr.onloadend = function() {
       if (xhr.status === 404) {
-        resolve('');
+        resolve("");
       } else if (xhr.response) {
         resolve(xhr.response);
       } else {
@@ -72,45 +87,47 @@ function getFile(filename) {
   });
 }
 
-var saltArr = hexToArray('79f9ff63bf690f0c4640a8fce3bc3d6e');
-var ivArr = hexToArray('c9567d08a04248a3202e7a5541ff9cf0');
-var testEncryptedData = hexToArray('ab7334b313ea8e5333a1db44dd782e59');
-var testEncryptedPlainText = 'testvalue';
+var saltArr = hexToArray("79f9ff63bf690f0c4640a8fce3bc3d6e");
+var ivArr = hexToArray("c9567d08a04248a3202e7a5541ff9cf0");
+var testEncryptedData = hexToArray("ab7334b313ea8e5333a1db44dd782e59");
+var testEncryptedPlainText = "testvalue";
 
-var encryptedDOMSteps = '/cv/steps.json.aes?_=67f271';
-var encryptedPrivatePDF = '/cv/timdream-private.pdf.aes?_=b80308';
+var encryptedDOMSteps = "/cv/steps.json.aes?_=67f271";
+var encryptedPrivatePDF =
+  "/cv/timdream-private.pdf.aes?_=b80308";
 
 self.onmessage = function(evt) {
   var password = evt.data.password;
 
-  Promise.all([getKey(password),
-               getFile(encryptedDOMSteps),
-               getFile(encryptedPrivatePDF)])
+  Promise.all([
+    getKey(password),
+    getFile(encryptedDOMSteps),
+    getFile(encryptedPrivatePDF)
+  ])
     .then(function(values) {
       var key = values[0];
       var stepsArr = values[1];
       var pdfArr = values[2];
 
       if (!key) {
-        throw 'Incorrect Password.';
+        throw "Incorrect Password.";
       }
 
-      return Promise.all([decipher(key, stepsArr),
-        decipher(key, pdfArr)]);
+      return Promise.all([decipher(key, stepsArr), decipher(key, pdfArr)]);
     })
     .then(function(values) {
       self.postMessage({
-        type: 'result',
+        type: "result",
         domModifications: JSON.parse(arrayToStr(new Uint8Array(values[0]))),
-        privatePDFBlob: new Blob([values[1]], { type: 'application/pdf' })
+        privatePDFBlob: new Blob([values[1]], { type: "application/pdf" })
       });
     })
     .catch(function(e) {
       console.error(e);
-      if (typeof e === 'string') {
-        self.postMessage({ type: 'result', error: e });
+      if (typeof e === "string") {
+        self.postMessage({ type: "result", error: e });
       } else {
-        self.postMessage({ type: 'error', message: message });
+        self.postMessage({ type: "error", message: message });
       }
     });
 };

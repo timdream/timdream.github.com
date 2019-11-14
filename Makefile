@@ -258,6 +258,10 @@ assets/asmcrypto-decipher.js: Makefile \
 		npm install && \
 		touch ./node_modules/.bin/uglifycss ./node_modules/uglify-es/bin/uglifyjs
 
+./node_modules/.bin/prettier: package.json
+		npm install && \
+		touch ./node_modules/.bin/prettier
+
 %.min.css: Makefile \
 					 node_modules/.bin/uglifycss \
 					 %.css
@@ -324,6 +328,10 @@ clean:
 .PHONY: watch
 watch:
 	fswatch -o . | xargs -n1 -I{} time make -j4
+
+.PHONY: prettier
+prettier: ./node_modules/.bin/prettier
+	./node_modules/.bin/prettier --write $$(ls src/{assets/,}*.js)
 
 .PHONY: finalsize
 finalsize:

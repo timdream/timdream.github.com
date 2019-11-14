@@ -1,16 +1,18 @@
-'use strict';
+"use strict";
 
 function getKey(password) {
-  return self.crypto.subtle.importKey('raw', strToArray(password),
-      {name: 'PBKDF2'}, false, ['deriveKey'])
+  return self.crypto.subtle
+    .importKey("raw", strToArray(password), { name: "PBKDF2" }, false, [
+      "deriveKey"
+    ])
     .then(function(masterKey) {
       return self.crypto.subtle.deriveKey(
-        { 'name': 'PBKDF2', 'salt': saltArr,
-          'iterations': 500, 'hash': 'SHA-256' },
+        { name: "PBKDF2", salt: saltArr, iterations: 500, hash: "SHA-256" },
         masterKey,
-        { "name": 'AES-CBC', "length": 256 },
+        { name: "AES-CBC", length: 256 },
         false,
-        ['decrypt' ])
+        ["decrypt"]
+      );
     })
     .then(function(key) {
       return Promise.all([key, decipher(key, testEncryptedData)]);
@@ -30,7 +32,10 @@ function getKey(password) {
 
 function decipher(key, encryptedArr) {
   return self.crypto.subtle.decrypt(
-    { "name": 'AES-CBC', iv: ivArr }, key, encryptedArr);
+    { name: "AES-CBC", iv: ivArr },
+    key,
+    encryptedArr
+  );
 }
 
 //%decipher-common.inc.js%

@@ -9,46 +9,58 @@
  * reproducible even after removing all metadata timestamps.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs');
+const fs = require("fs");
 
-const puppeteer = require('puppeteer');
-const { createServer } = require('http-server');
+const puppeteer = require("puppeteer");
+const { createServer } = require("http-server");
 
 const port = 20808;
-const host = '127.0.0.1';
+const host = "127.0.0.1";
 
-const password = fs.readFileSync(__dirname + '/encryption/password.secret', { encoding: 'utf-8'}).trim();
+const password = fs
+  .readFileSync(__dirname + "/encryption/password.secret", {
+    encoding: "utf-8"
+  })
+  .trim();
 
 async function startServer() {
-  var server = createServer({ root: __dirname + '/../' });
+  var server = createServer({ root: __dirname + "/../" });
   await new Promise(res => server.listen(port, host, res));
 }
 
 async function shot() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://' + host + ':' + port + '/cv/' , { waitUntil: 'networkidle2' });
+  await page.goto("http://" + host + ":" + port + "/cv/", {
+    waitUntil: "networkidle2"
+  });
 
   // Get public pages
-  await page.$eval('body', el => el.classList.add('with-page-number'));
-  await page.pdf({ path: __dirname + '/../cv/timdream.pdf', format: 'Letter'});
+  await page.$eval("body", el => el.classList.add("with-page-number"));
+  await page.pdf({ path: __dirname + "/../cv/timdream.pdf", format: "Letter" });
 
   // Also get the screenshot for sharing
-  await page.$eval('body', el => el.classList.add('screenshot'));
-  await page.screenshot({path: __dirname + '/../assets/cv-screenshot.png', omitBackground: true });
-  await page.$eval('body', el => el.classList.remove('screenshot'));
+  await page.$eval("body", el => el.classList.add("screenshot"));
+  await page.screenshot({
+    path: __dirname + "/../assets/cv-screenshot.png",
+    omitBackground: true
+  });
+  await page.$eval("body", el => el.classList.remove("screenshot"));
 
   // Decrypt
   await page.evaluate(password => {
-    document.getElementById('unlock-password').value = password;
+    document.getElementById("unlock-password").value = password;
     app.cipherUI.decrypt();
   }, password);
-  await page.waitForSelector('body.decrypted');
+  await page.waitForSelector("body.decrypted");
 
   // Get private pages
-  await page.pdf({ path: __dirname + '/encryption/timdream-private.pdf', format: 'Letter'});
+  await page.pdf({
+    path: __dirname + "/encryption/timdream-private.pdf",
+    format: "Letter"
+  });
 
   await browser.close();
 }
@@ -57,7 +69,9 @@ async function shot() {
   try {
     await startServer();
     await shot();
-  } catch (e) { console.error(e); }
+  } catch (e) {
+    console.error(e);
+  }
 
   process.exit();
 })();
