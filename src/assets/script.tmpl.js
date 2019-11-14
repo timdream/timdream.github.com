@@ -33,12 +33,12 @@ PicMotion.prototype = {
 
     areaEl.insertBefore(foregroundEl, areaEl.firstChild);
     areaEl.insertBefore(sceneEl, areaEl.firstChild);
-    areaEl.addEventListener('touchstart', this);
-    areaEl.addEventListener('touchmove', this);
-    areaEl.addEventListener('touchend', this);
-    areaEl.addEventListener('touchcancel', this);
-    areaEl.addEventListener('mousemove', this);
-    areaEl.addEventListener('mouseleave', this);
+    areaEl.addEventListener('touchstart', this, { passive: true });
+    areaEl.addEventListener('touchmove', this, { passive: true });
+    areaEl.addEventListener('touchend', this, { passive: true });
+    areaEl.addEventListener('touchcancel', this, { passive: true });
+    areaEl.addEventListener('mousemove', this, { passive: true });
+    areaEl.addEventListener('mouseleave', this, { passive: true });
     areaEl.classList.add('motion');
   },
 
@@ -46,8 +46,8 @@ PicMotion.prototype = {
     switch (evt.type) {
       case 'touchstart':
         // Disregard emulated mouse events
-        this.areaEl.removeEventListener('mousemove', this);
-        this.areaEl.removeEventListener('mouseleave', this);
+        this.areaEl.removeEventListener('mousemove', this, { passive: true });
+        this.areaEl.removeEventListener('mouseleave', this, { passive: true });
         break;
 
       case 'touchmove':

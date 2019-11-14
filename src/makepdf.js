@@ -29,7 +29,7 @@ async function startServer() {
 async function shot() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://' + host + ':' + port + '/cv/' , { waitUntil: 'networkidle' });
+  await page.goto('http://' + host + ':' + port + '/cv/' , { waitUntil: 'networkidle2' });
 
   // Get public pages
   await page.$eval('body', el => el.classList.add('with-page-number'));

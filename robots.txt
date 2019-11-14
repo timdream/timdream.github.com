@@ -1,1 +1,2 @@
-/src
+User-agent: *
+Disallow: /src
