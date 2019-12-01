@@ -262,12 +262,12 @@ CVDecipher.prototype = {
     var worker;
     if (this.useWebCrypto) {
       worker = this.worker = new Worker(
-        "/assets/webcrypto-decipher.min.js?_=510a4f"
+        "/assets/webcrypto-decipher.min.js?_=8aad1e"
       );
       this.decipherName = "Web Crypto Decipher";
     } else {
       worker = this.worker = new Worker(
-        "/assets/asmcrypto-decipher.min.js?_=3b4d0e"
+        "/assets/asmcrypto-decipher.min.js?_=4e7678"
       );
       this.decipherName = "asmCrypto Decipher";
     }

@@ -82,7 +82,7 @@ var testEncryptedPlainText = "testvalue";
 
 var encryptedDOMSteps = "/cv/steps.json.aes?_=67f271";
 var encryptedPrivatePDF =
-  "/cv/timdream-private.pdf.aes?_=b80308";
+  "/cv/timdream-private.pdf.aes?_=b8a7c2";
 
 self.onmessage = function(evt) {
   var password = evt.data.password;
