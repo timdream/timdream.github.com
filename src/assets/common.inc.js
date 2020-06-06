@@ -5,18 +5,17 @@ if (
   window.doNotTrack !== "1" &&
   navigator.doNotTrack !== "1"
 ) {
-  var _gaq = _gaq || [];
-  _gaq.push(["_setAccount", "UA-4623408-2"]);
-  _gaq.push(["_trackPageview"]);
-
-  (function() {
-    var ga = document.createElement("script");
-    ga.type = "text/javascript";
-    ga.async = true;
-    ga.src = "https://ssl.google-analytics.com/ga.js";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(ga, s);
-  })();
+    var _paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//timc.idv.tw/matomo/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
 }
 
 function ServiceWorkerController() {}
